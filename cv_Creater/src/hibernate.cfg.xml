@@ -14,6 +14,7 @@
   <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
   
 <mapping class="com.cv.data.MsgData"/>
+<mapping class="com.cv.data.InfoData"/>
  
 </session-factory>
   </hibernate-configuration>

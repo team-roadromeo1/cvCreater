@@ -4,4 +4,20 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name>info</servlet-name>
+    <jsp-file>/info.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>info</servlet-name>
+    <url-pattern>/Information</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>choose</servlet-name>
+    <jsp-file>/choose.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>choose</servlet-name>
+    <url-pattern>/ChooseTemplate</url-pattern>
+  </servlet-mapping>
 </web-app>
