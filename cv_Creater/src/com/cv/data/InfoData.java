@@ -41,7 +41,7 @@ public class InfoData {
 	@Column(name="dgree")
 	private String dgree;
 	
-	@Column(name="dgree_name")
+	@Column(name="dgree_per")
 	private String dgree_per;
 
 	@Column(name="dgree_ins")
@@ -50,7 +50,8 @@ public class InfoData {
     @Column(name="obj")
 	private String obj;
 	
-	
+	@Column(name="address")
+	private String address;
 	
 	public String getName() {
 		return name;
@@ -162,4 +163,14 @@ public class InfoData {
 		this.obj = obj;
 	}
 
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	
 }

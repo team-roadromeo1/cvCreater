@@ -38,20 +38,20 @@
 </td>
 
 </tr>
-
-
+</table>
+<table>
 <tr>
 <td>
-<select name="edu1">
+<textarea cols="120" rows="10" name="address" placeholder="Your Address*" required></textarea>
+</td>
+</tr>
+</table>
+<br>
 
-
-<option>
-10th
-</option>
-
-
-</select>
-
+<table>
+<tr>
+<td>
+<input type="radio" name="edu1" value="10th" title="if you did class 10th">10th
 </td>
 
 <td>
@@ -64,27 +64,31 @@
 
 </tr>
 
+<tr>
+<td>
+<input type="radio" name="edu2" title="If you did diploma" value="diploma">Diploma(optional)
+</td>
 
+<td>
+<input type="text" name="hsc" placeholder="Your Overall Diploma percentage.">
+</td>
+
+<td>
+<input type="text" name="hsc_ins" placeholder="Name of the Institute." >
+</td>
+	
 
 <tr>
 <td>
-<select name="edu2">
-
-
-<option>
-12th
-</option>
-
-
-</select>
+<input type="radio" name="edu2" title="if you did class 12th" value="12th">12th
 </td>
 
 <td>
-<input type="text" name="hsc" placeholder="Your 12th percentage." required>
+<input type="text" name="hsc" placeholder="Your 12th percentage." >
 </td>
 
 <td>
-<input type="text" name="hsc_ins" placeholder="Name of the Institute." required>
+<input type="text" name="hsc_ins" placeholder="Name of the Institute." >
 </td>
 
 </tr>
@@ -143,7 +147,9 @@ Others
 </div>
 </center>
 <br>
-<center><input type="submit" value="Save"></center
+<center><input type="submit" value="Save">&nbsp<input type="reset" value="Reset">
+
+</center
 </form>
 </body>
 </html>

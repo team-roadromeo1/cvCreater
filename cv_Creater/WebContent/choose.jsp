@@ -8,11 +8,24 @@
 </head>
 <body>
 <center>
+<div style="top:0;float:left;"><a href="ServiceProfile">Profile</a></div>
+<div style="top:0;float:right;"><a href="ServiceLogout">Logout</a></div>
 <h1><u>Choose Template</u></h1>
 </center>
 <br>
 <br>
+<% 
+%>
 
+<center><h3><%session=request.getSession(false);
+String name=(String)session.getAttribute("name");
+
+out.println("Welcome "+name+" please choose any one template.");
+%>
+ </h3></center>
+ <br>
+ <br>
+ 
 <center>
 <table>
 <tr>

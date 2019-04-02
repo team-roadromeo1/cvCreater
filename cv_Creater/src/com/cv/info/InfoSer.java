@@ -22,6 +22,7 @@ public class InfoSer extends HttpServlet {
          String name=request.getParameter("fname")+" "+request.getParameter("lname");
          String email=request.getParameter("email");
          String number=request.getParameter("no");
+         String address=request.getParameter("address");
          String ssc=request.getParameter("edu1");
          String ssc_per=request.getParameter("ssc");
          String ssc_ins=request.getParameter("ssc_ins");
@@ -38,6 +39,7 @@ public class InfoSer extends HttpServlet {
          data.setName(name);
          data.setEmail(email);
          data.setPhone(number);
+         data.setAddress(address);
          data.setSsc(ssc);
          data.setSsc_per(ssc_per);
          data.setSsc_ins(ssc_ins);

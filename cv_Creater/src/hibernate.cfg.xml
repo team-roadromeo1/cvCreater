@@ -15,6 +15,7 @@
   
 <mapping class="com.cv.data.MsgData"/>
 <mapping class="com.cv.data.InfoData"/>
- 
+<mapping class="com.cv.data.RegisterData"/>
+  
 </session-factory>
   </hibernate-configuration>

@@ -23,6 +23,13 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
+   <!--Sign in form modal  -->
+  <link href="showhide.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="showhide.js"></script>
+
+
+
 </head>
 
 <body>
@@ -46,6 +53,7 @@
           <li><a href="#call-to-action">Quick Cv</a></li>
           <!-- <li><a href="#services">Services</a></li>
            --><li><a href="#portfolio">Store</a></li>
+           <li><a href="Login">Login</a></li>
          <!--  <li class="menu-has-children"><a href="">More</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -191,7 +199,7 @@
             <p class="cta-text">Here you can quickly create your cv by just three simple steps.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Create quick CV</a>
+            <a class="cta-btn align-middle" href="Login">Create quick CV</a>
           </div>
         </div>
 
@@ -221,7 +229,7 @@
 
         <div class="row" id="portfolio-wrapper">
           <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <a href="">
+            <a href="Login">
               <img src="img/portfolio/stud1.jpg" alt="Student-1">
               <div class="details">
                 <h4>Student-1</h4>
@@ -232,7 +240,7 @@
 
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <a href="">
+            <a href="Login">
               <img src="img/portfolio/stud2.jpg" alt="">
               <div class="details">
                 <h4>Student-2</h4>
@@ -242,7 +250,7 @@
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <a href="">
+            <a href="Login">
               <img src="img/portfolio/e1.jpg" alt="">
               <div class="details">
                 <h4>Entry Level-1</h4>
@@ -252,7 +260,7 @@
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <a href="">
+            <a href="Login">
               <img src="img/portfolio/e2.jpg" alt="">
               <div class="details">
                 <h4>Entry-Level-2</h4>
@@ -263,7 +271,7 @@
 
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <a href="">
+            <a href="Login">
               <img src="img/portfolio/e3.jpg" alt="">
               <div class="details">
                 <h4>Entry-Level-3</h4>
@@ -273,7 +281,7 @@
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <a href="">
+            <a href="Login">
               <img src="img/portfolio/stud3.jpg" alt="">
               <div class="details">
                 <h4>Student-3</h4>
@@ -283,7 +291,7 @@
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
-            <a href="">
+            <a href="Login">
               <img src="img/portfolio/ch1.jpg"  alt="chronological">
               <div class="details">
                 <h4>Chronolgical Resume</h4>
@@ -293,7 +301,7 @@
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
-            <a href="">
+            <a href="Login">
               <img src="img/portfolio/comb.jpg" alt="">
               <div class="details">
                 <h4>Combinational Resume</h4>
@@ -310,77 +318,27 @@
 
 
     <!--==========================
-      Team Section
+      sign in Section
     ============================-->
-   <!--
-    <section id="team">
+<!--    
+     <section id="team">
       <div class="container wow fadeInUp">
-        <div class="section-header">
-          <h3 class="section-title">Team</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+	        <div class="section-header">
+          <h3 class="section-title">Sign in</h3>
+          <p class="section-description">Sign in here.</p>
         </div>
+
         <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team-1.jpg" alt=""></div>
-              <h4>Walter White</h4>
-              <span>Chief Executive Officer</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team-2.jpg" alt=""></div>
-              <h4>Sarah Jhinson</h4>
-              <span>Product Manager</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team-3.jpg" alt=""></div>
-              <h4>William Anderson</h4>
-              <span>CTO</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team-4.jpg" alt=""></div>
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
+ <center>      <a href="Login" class="btn-get-started">Sign in here</a>
+ </center>
+  </div>
+          
         </div>
-
-      </div>
+         
+      
     </section>
--->
-<!-- #team -->
+  -->
+<!-- #sign in -->
 
 
     <!--==========================
@@ -489,6 +447,35 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
 
 </body>
 </html>
