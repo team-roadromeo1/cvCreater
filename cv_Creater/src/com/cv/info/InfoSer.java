@@ -2,7 +2,6 @@ package com.cv.info;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -57,14 +56,14 @@ public class InfoSer extends HttpServlet {
         	System.out.println("Data Saved at client end."); 
  			pw.println("<script type=\"text/javascript\">");
  			pw.println("alert('Your Information is saved.');");
- 			pw.println("location='ChooseTemplate';");
+ 			pw.println("location='Login';");
  			pw.println("</script>");
            }
          else {
         	System.out.println("Data is not Saved.");
         	pw.println("<script type=\"text/javascript\">");
   	        pw.println("alert('Your Information is not saved please try again.');");
-  			pw.println("location='ChooseTemplate';");
+  			pw.println("location='Information';");
   			pw.println("</script>");
              
          }

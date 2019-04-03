@@ -37,8 +37,8 @@ public class ServiceRegister extends HttpServlet {
        	  try {
        	    if(i==1) {
        	    	pw.println("<script type=\"text/javascript\">");	
-   				pw.println("alert('Congratulation!!! you are now regitered.');");
-   				pw.println("location='Login';");
+   				pw.println("alert('you are now regitered please fill the information to go further.');");
+   				pw.println("location='Information';");
    				pw.println("</script>");
 	        	
        	    }

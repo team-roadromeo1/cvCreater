@@ -29,11 +29,11 @@
     <url-pattern>/Login</url-pattern>
   </servlet-mapping>
   <servlet>
-  <servlet-name>Profile</servlet-name>
-  <jsp-file>/Profile.jsp</jsp-file>
-  </servlet> 
+    <servlet-name>Profile</servlet-name>
+    <jsp-file>/Profile.jsp</jsp-file>
+  </servlet>
   <servlet-mapping>
-  <servlet-name>Profile</servlet-name>
-  <url-pattern>ServiceProfile</url-pattern>
+    <servlet-name>Profile</servlet-name>
+    <url-pattern>/ServiceProfile</url-pattern>
   </servlet-mapping>
 </web-app>

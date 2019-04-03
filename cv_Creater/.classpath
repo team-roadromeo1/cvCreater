@@ -47,7 +47,6 @@
 	<classpathentry kind="lib" path="C:/Users/DELL/Desktop/project/impotant jars/servltes and jsp&apos;s/java-json.jar"/>
 	<classpathentry kind="lib" path="C:/Users/DELL/Desktop/project/impotant jars/servltes and jsp&apos;s/jsp.jar"/>
 	<classpathentry kind="lib" path="C:/Users/DELL/Desktop/project/impotant jars/servltes and jsp&apos;s/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/DELL/Desktop/project/impotant jars/servltes and jsp&apos;s/servlet.jar"/>
 	<classpathentry kind="lib" path="C:/Users/DELL/Desktop/project/impotant jars/pdf box/fontbox-2.0.14.jar"/>
 	<classpathentry kind="lib" path="C:/Users/DELL/Desktop/project/impotant jars/pdf box/pdfbox-2.0.14.jar"/>
 	<classpathentry kind="lib" path="C:/Users/DELL/Desktop/project/impotant jars/pdf box/pdfbox-app-2.0.14.jar"/>
@@ -57,5 +56,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.mail-1.6.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl-1.2.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DELL/Downloads/javax.servlet-3.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
