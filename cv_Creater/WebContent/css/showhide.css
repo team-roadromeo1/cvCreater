@@ -59,7 +59,7 @@ top:0
 h3{
 margin-top:0
 }
-input[type=text],[type=password]{
+.in{
 padding:7px;
 width:100%;
 height:40px;

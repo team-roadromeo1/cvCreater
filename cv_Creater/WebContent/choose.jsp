@@ -288,7 +288,7 @@ if(name==null){
        <%out.println(name); %>
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Edit Profile</a>
+        <a class="dropdown-item" href="#">Edit Cv Profile</a>
         <a class="dropdown-item" href="#">Edit Account info</a>
         <a class="dropdown-item" href="com.cv.services.ServiceLogout">Logout</a>
       </div>

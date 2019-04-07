@@ -100,24 +100,59 @@ background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
 
 
 .sel{
- width:415px;
- height:62px;
- font-size: 1.25em;
- font-weight: 350;
+ width:150px;
+ height:60px;
  margin-top:18px;
  margin-left:20px;
  padding:10px 8px;
  border-radius:15px;
  border-color:transparent;
+ font-size: 16px;
  }
+
  
  .txt{
- width:200px;
- height:18px;
+ width:250px;
+ height:40px;
  padding:10px 8px;
  border-radius:15px;
  border-color:transparent;
+ font-size: 15px;
  }
+
+ .txtedu{
+ width:350px;
+ height:40px;
+ padding:10px 8px;
+ border-radius:15px;
+ border-color:transparent;
+ font-size: 15px;
+ }
+
+.test{
+ width:150px;
+ height:40px;
+ padding:10px 8px;
+ border-radius:15px;
+ border-color:transparent;
+ font-size: 15px;
+ }
+
+ 
+.ta{
+
+ border-radius:15px;
+ border-color:transparent;
+ font-size: 15px;
+
+}
+
+.r{
+font-size: 22px;
+height: 18px;
+width: 18px;
+}
+
 
 
 
@@ -149,6 +184,35 @@ table {
  <script src="js/collapsible.js"></script>
  
 
+
+ <%
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setDateHeader("Expires", 0);
+response.setHeader("Pragma","no-cache");
+
+
+
+String name=(String)session.getAttribute("name");
+String id=(String)session.getAttribute("id");
+if(name==null&&id==null){
+	System.out.print("Attempt of Unauthenticated Access failed.");
+	out.println("<script type=\"text/javascript\">");
+	out.println("alert('You have to login first.');");
+	out.println("location='Login';");
+	out.println("</script>");
+}
+
+
+else{
+	session.setAttribute("name", name);
+	session.setAttribute("id", id);
+	
+}
+%>
+
+
+
 <br>
 <br>
 
@@ -158,25 +222,25 @@ table {
 <button class="collapsible">Personal Information</button>
 <!-- Personal Information  -->
 <div class="content">
-<center>
+
 <table>
 <tr>
 <td>
-<input type="text" name="fname" placeholder="First Name" required>
+<input type="text" name="fname" class="txt" placeholder="First Name"  required>
 </td>
 <td>
-<input type="text" name="lname" placeholder="Last Name" required>
+<input type="text" name="lname" class="txt" placeholder="Last Name"  required>
 </td>
 </tr>
 
 <tr>
 
 <td>
-<input type="email" name="email" placeholder="Your Email." required>
+<input type="email" name="email" class="txt" placeholder="Your Email."  required>
 </td>
 
 <td>
-<input type="text" name="no" placeholder="Your Contact no." required>
+<input type="text" name="no" class="txt" placeholder="Your Contact no." pattern="[0-9]{10}"  required>
 </td>
 
 </tr>
@@ -184,7 +248,7 @@ table {
 <table>
 <tr>
 <td>
-<textarea cols="120" rows="10" name="address" placeholder="Your Address*" required></textarea>
+<textarea cols="120" rows="10" name="address" class="ta" placeholder="Your Address*"  required></textarea>
 </td>
 </tr>
 </table>
@@ -201,96 +265,236 @@ table {
 <button class="collapsible">Educational Information</button>
 <!-- Educational Information  -->
 <div class="content">
-<center>
 <table>
 <tr>
 <td>
-<input type="radio" name="edu1" value="10th" title="if you did class 10th">10th
-</td>
 
-<td>
-<input type="text" name="ssc" placeholder="Your 10th percentage." required>
-</td>
-
-<td>
-<input type="text" name="ssc_ins" placeholder="Name of the Institute." required>
-</td>
-
-</tr>
-
-<tr>
-<td>
-<input type="radio" name="edu2" title="If you did diploma" value="diploma">Diploma(optional)
-</td>
-
-<td>
-<input type="text" name="hsc" placeholder="Your Overall Diploma percentage.">
-</td>
-
-<td>
-<input type="text" name="hsc_ins" placeholder="Name of the Institute." >
-</td>
-	
-
-<tr>
-<td>
-<input type="radio" name="edu2" title="if you did class 12th" value="12th">12th
-</td>
-
-<td>
-<input type="text" name="hsc" placeholder="Your 12th percentage." >
-</td>
-
-<td>
-<input type="text" name="hsc_ins" placeholder="Name of the Institute." >
-</td>
-
-</tr>
-
-<tr>
-<td>
-<select name="edu3">
-
-
-<option>
-Dgree/Course
-</option>
-
-<option>
-BE
-</option>
-
-<option>
-B.Tech
-</option>
-
-<option>
-ME
-</option>
-
-<option>
-M.Tech
-</option>
-
-<option>
-Others
-</option>
-
+<select name="edu1" class="sel" required>
+<option>Year of passing</option>
+<option>Pursuing</option>
+<option>1990</option>
+<option>1991</option>
+<option>1992</option>
+<option>1993</option>
+<option>1994</option>
+<option>1995</option>
+<option>1996</option>
+<option>1997</option>
+<option>1998</option>
+<option>1999</option>
+<option>2000</option>
+<option>2001</option>
+<option>2002</option>
+<option>2003</option>
+<option>2004</option>
+<option>2005</option>
+<option>2006</option>
+<option>2007</option>
+<option>2008</option>
+<option>2009</option>
+<option>2010</option>
+<option>2011</option>
+<option>2012</option>
+<option>2013</option>
+<option>2014</option>
+<option>2015</option>
+<option>2016</option>
+<option>2017</option>
+<option>2018</option>
 </select>
 </td>
 
 <td>
-<input type="text" name="dgree" placeholder="Your Dgree/Course Overall Percentage." required>
+
+</td>
+<td>
+
+</td>
+
+
+<td>
+<input type="text"  name="ssc" class="txtedu" placeholder="Your 10th percentage."  required>
 </td>
 
 <td>
-<input type="text" name="dgree_ins" placeholder="Name of the Institute." required>
+
+</td>
+<td>
+
+</td>
+<td>
+
+</td>
+<td>
+
+</td>
+<td>
+
+</td>
+
+
+<td>
+<input type="text" name="ssc_ins" class="txtedu" placeholder="Name of the Institute."  required>
+</td>
+
+</tr>
+</table>
+
+<table>
+<tr>
+<td>
+<select name="edu2" class="sel" required>
+<option>Year of passing</option>
+<option>Pursuing</option>
+<option>1990</option>
+<option>1991</option>
+<option>1992</option>
+<option>1993</option>
+<option>1994</option>
+<option>1995</option>
+<option>1996</option>
+<option>1997</option>
+<option>1998</option>
+<option>1999</option>
+<option>2000</option>
+<option>2001</option>
+<option>2002</option>
+<option>2003</option>
+<option>2004</option>
+<option>2005</option>
+<option>2006</option>
+<option>2007</option>
+<option>2008</option>
+<option>2009</option>
+<option>2010</option>
+<option>2011</option>
+<option>2012</option>
+<option>2013</option>
+<option>2014</option>
+<option>2015</option>
+<option>2016</option>
+<option>2017</option>
+<option>2018</option>
+</select>
+</td>
+
+<td>
+
+</td>
+<td>
+
+</td>
+
+
+<td>
+<input type="text" name="hsc" class="txtedu" placeholder="Your 12th percentage." required>
+</td>
+
+<td>
+
+</td>
+<td>
+
+</td>
+<td>
+
+</td>
+<td>
+
+</td>
+<td>
+
+</td>
+
+
+<td>
+<input type="text" name="hsc_ins" class="txtedu" placeholder="Name of the Institute." required>
+</td>
+
+</tr>
+</table>
+
+
+<table>
+<tr>
+
+<td>
+<select name="edu3" class="sel" required>
+<option>Year of passing</option>
+<option>Pursuing</option>
+<option>Not Done</option>
+<option>1990</option>
+<option>1991</option>
+<option>1992</option>
+<option>1993</option>
+<option>1994</option>
+<option>1995</option>
+<option>1996</option>
+<option>1997</option>
+<option>1998</option>
+<option>1999</option>
+<option>2000</option>
+<option>2001</option>
+<option>2002</option>
+<option>2003</option>
+<option>2004</option>
+<option>2005</option>
+<option>2006</option>
+<option>2007</option>
+<option>2008</option>
+<option>2009</option>
+<option>2010</option>
+<option>2011</option>
+<option>2012</option>
+<option>2013</option>
+<option>2014</option>
+<option>2015</option>
+<option>2016</option>
+<option>2017</option>
+<option>2018</option>
+</select>
+</td>
+
+
+<td>
+
+</td>
+<td>
+
+</td>
+
+
+<td>
+<input type="text" name="dgree_per" class="txtedu" placeholder="Overall percentage(in %)."  required>
+</td>
+
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+
+
+<td>
+<input type="text" name="dgree_ins" class="txtedu" placeholder="Name of the institute."  required>
+</td>
+
+
+</tr>
+<tr>
+
+<td>
+<select name="dgree_name" class="sel" required>
+<option>BE</option>
+<option>BSC</option>
+<option>B.Com</option>
+<option>Other</option>
+</select>
 </td>
 
 </tr>
 
 </table>
-</center>
 <br>
 </div>
 
@@ -305,31 +509,381 @@ Others
 <!--Objective  -->
 <div class="content">
 <br>
-<textarea cols="120" rows="10" name="obj" placeholder="Your Objective*" required></textarea>
+<textarea cols="120" rows="10" class="ta" name="obj" placeholder="Your Objective*"  required></textarea>
 <br>
 </div>
 
 
 <br>
 <br>
+<br>
 
 
+<button class="collapsible" title="Write your skills here">Your Skills</button>
+<!-- Skill  -->
+<div class="content">
+
+<table>
+<tr>
 
 
+<td>
+<input type="text" name="s1" class="txtedu" placeholder="Skill."  required>
+</td>
+
+<td> </td>
+<td> </td>
+<td> </td>
+
+<td>
+<input type="text" name="s2" class="txtedu" placeholder="Skill" >
+</td>
+
+
+</tr>
+
+<tr>
+
+
+<td>
+<input type="text" name="s3" class="txtedu" placeholder="Skill.">
+</td>
+
+<td> </td>
+<td> </td>
+<td> </td>
+
+<td>
+<input type="text" name="s4" class="txtedu" placeholder="Skill" >
+</td>
+
+
+</tr>
+
+<tr>
+
+
+<td>
+<input type="text" name="s5" class="txtedu" placeholder="Skill.">
+</td>
+
+<td> </td>
+<td> </td>
+<td> </td>
+
+<td>
+<input type="text" name="s6" class="txtedu" placeholder="Skill" >
+</td>
+
+
+</tr>
+
+<tr>
+
+
+<td>
+<input type="text" name="s7" class="txtedu" placeholder="Skill.">
+</td>
+
+<td> </td>
+<td> </td>
+<td> </td>
+
+<td>
+<input type="text" name="s8" class="txtedu" placeholder="Skill" >
+</td>
+
+
+</tr>
+
+<tr>
+
+
+<td>
+<input type="text" name="s9" class="txtedu" placeholder="Skill.">
+</td>
+
+<td> </td>
+<td> </td>
+<td> </td>
+
+<td>
+<input type="text" name="s10" class="txtedu"  placeholder="Skill" >
+</td>
+
+
+</tr>
+
+
+</table>
+
+</div>
+
+
+<br>
+<br>
+<br>
+
+<button class="collapsible" title="Write your project details here">Project Details</button>
+<!-- Projects  -->
+<div class="content">
+
+<button class="collapsible" title="Write your project details here( )">Project-1*</button>
+<!-- Project1  -->
+<div class="content">
 
 <table>
 <tr>
 <td>
+<input type="text" name="p1name" class="txt" placeholder="Project Name"  required>
+</td>
+<td>
+<input type="text" name="p1time" class="txt" placeholder="Project Duration(in months)"  required>
+</td>
+</tr>
+
+</table>
+<table>
+<tr>
+<td>
+<textarea cols="120" rows="10" name="p1desc" class="ta" placeholder="About your project*"  required></textarea>
 </td>
 </tr>
 </table>
-</div>
-</center>
-<br>
-<center><input type="submit" class="btn" value="Save">&nbsp<input type="reset" class="btn" value="Reset">
 
+</div>
+
+
+<button class="collapsible" title="Write your project details here">Project-2</button>
+<!-- Project2  -->
+<div class="content">
+<table>
+<tr>
+<td>
+<input type="text" name="p2name" class="txt" placeholder="Project Name"  >
+</td>
+<td>
+<input type="text" name="p2time" class="txt" placeholder="Project Duration(in months)"  >
+</td>
+</tr>
+
+</table>
+<table>
+<tr>
+<td>
+<textarea cols="120" rows="10" name="p2desc" class="ta" placeholder="About your project*"  ></textarea>
+</td>
+</tr>
+</table>
+
+</div>
+
+<br>
+</div>
+
+<br>
+<br>
+<br>
+
+<button class="collapsible" title="Write your project details here">Achievements</button>
+<!-- Achievements  -->
+<div class="content">
+
+<button class="collapsible" title="Write your achievements here( )">Achievement-1*</button>
+<!-- Achievement-1  -->
+<div class="content">
+<br>
+<textarea cols="120" rows="10" name="ach1" class="ta" placeholder="About your Achievement*"  required></textarea>
+<br>
+</div>
+
+<button class="collapsible" title="Write your achievements here">Achievement-2</button>
+<!-- Achievement-2  -->
+<div class="content">
+<br>
+<textarea cols="120" rows="10" name="ach2" class="ta" placeholder="About your Achievement"></textarea>
+<br>
+</div>
+
+<button class="collapsible" title="Write your achievements here">Achievement-3</button>
+<!-- Achievement-3  -->
+<div class="content">
+<br>
+<textarea cols="120" rows="10" name="ach3" class="ta" placeholder="About your Achievement"></textarea>
+<br>
+</div>
+
+<button class="collapsible" title="Write your achievements here">Achievement-4</button>
+<!-- Achievement-4  -->
+<div class="content">
+<br>
+<textarea cols="120" rows="10" name="ach4" class="ta" placeholder="About your Achievement"></textarea>
+<br>
+</div>
+
+<button class="collapsible" title="Write your achievements here">Achievement-5</button>
+<!-- Achievement-5  -->
+<div class="content">
+<br>
+<textarea cols="120" rows="10" name="ach5" class="ta" placeholder="About your Achievement"></textarea>
+<br>
+</div>
+
+</div>
+
+<br>
+<br>
+<br>
+
+<button class="collapsible" title="Write your industrial training details here">Industrial exposure</button>
+<!-- Industrial exposure  -->
+<div class="content">
+<button class="collapsible" title="Write your industrial training details here( )">Training-1*</button>
+<!-- Industrial exposure  -->
+<div class="content">
+<br>
+<table>
+<tr>
+<td>
+<input type="text" name="t1name" class="txt" placeholder="Traning Name*"  required>
+</td>
+<td>
+<input type="text" name="t1_ins" class="txt" placeholder="Training Institution*"  required>
+</td>
+</tr>
+
+</table>
+<table>
+<tr>
+<td>
+<textarea cols="120" rows="10" name="t1desc" class="ta" placeholder="About your Training" required></textarea>
+</td>
+</tr>
+</table>
+
+<br>
+</div>
+
+<button class="collapsible" title="Write your industrial training details here">Training-2</button>
+<!-- Industrial exposure  -->
+<div class="content">
+<br>
+<table>
+<tr>
+<td>
+<input type="text" name="t2name" class="txt" placeholder="Traning Name"  >
+</td>
+<td>
+<input type="text" name="t2_ins" class="txt" placeholder="Training Institution"  >
+</td>
+</tr>
+
+</table>
+<table>
+<tr>
+<td>
+<textarea cols="120" rows="10" name="t2desc" class="ta" placeholder="About your Training" ></textarea>
+</td>
+</tr>
+</table>
+
+<br>
+</div>
+
+</div>
+
+<br>
+<br>
+<br>
+
+
+<button class="collapsible" title="verify your information">Hobbies</button>
+<!-- Hobbies  -->
+<div class="content">
+<table>
+<tr>
+<td>
+<input type="text" name="h1" class="txtedu" placeholder="Hobby" title="Your Hobbie."  required>
+</td>
+
+<td> </td>
+<td> </td>
+<td> </td>
+
+<td>
+<input type="text" name="h2" class="txtedu"  placeholder="Hobby" title="Your Hobbie.">
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="text" name="h3" class="txtedu" placeholder="Hobby" title="Your Hobbie.">
+</td>
+
+<td> </td>
+<td> </td>
+<td> </td>
+
+<td>
+<input type="text" name="h4" class="txtedu"  placeholder="Hobby" title="Your Hobbie.">
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="text" name="h5" class="txtedu"  placeholder="Hobby" title="Your Hobbie.">
+</td>
+</tr>
+
+
+</table>
+
+</div>
+
+<br>
+<br>
+<br>
+
+
+<button class="collapsible" title="verify your information">Declaration</button>
+<!-- Declaration  -->
+<div class="content">
+
+<h3><font color="white">I hereby declare that the above-mentioned information is correct up to my knowledge and I bear the responsibility
+for the correctness of the above-mentioned particulars.  </font></h3>
+
+<br>
+
+<table>
+<tr>
+<td>
+<input type="text" name="place" class="txtedu" placeholder="Place" title="Your place."  required>
+</td>
+
+<td> </td>
+<td> </td>
+<td> </td>
+
+<td>
+<input type="text" name="decname" class="txtedu"  placeholder="Name" title="Your name."  required>
+</td>
+</tr>
+</table>
+
+<br>
+
+</div>
+
+
+<br>
+<br>
+<br>
+
+
+<center> <input type="submit" class="btn" value="Save">&nbsp<input type="reset" class="btn" value="Reset">
 </center>
 </form>
+
 <script type="text/javascript">
 var coll = document.getElementsByClassName("collapsible");
 var i;
@@ -346,6 +900,6 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
-</form>
+
 </body>
 </html>

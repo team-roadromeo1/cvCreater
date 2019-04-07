@@ -55,8 +55,10 @@ public class ServiceLogin extends HttpServlet {
                   	Object o=(Object)it.next();
                   	RegisterData r=(RegisterData)o;
                   System.out.println("login attempt success");
-                  
+                  System.out.println("name: "+r.getName());
+                  System.out.println("id: "+r.getId());
                   session.setAttribute("name",r.getName());
+                  session.setAttribute("id", r.getId());
                   }
                   request.getRequestDispatcher("ServiceProfile").forward(request, response);
                   
