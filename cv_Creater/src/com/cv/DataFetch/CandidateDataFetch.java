@@ -20,7 +20,9 @@ public class CandidateDataFetch {
 		Session session=DataConnector.getConnect();
         Transaction t=session.beginTransaction();
         String name=id;
-        
+ 
+        System.out.println("and id at: "+name);
+       
        Query q=session.createQuery("from InfoData data where id=:id");
         q.setParameter("id", id);
 		

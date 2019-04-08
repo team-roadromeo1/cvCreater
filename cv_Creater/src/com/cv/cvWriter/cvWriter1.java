@@ -42,8 +42,7 @@ public class cvWriter1 {
 			
 			
 			int num=generatePin();
-			String num_str=Integer.toString(num);
-			String dest="C:\\Users\\DELL\\Downloads\\cv_Creater\\"+filename+"_"+num_str+".pdf";
+			String dest="C:\\Users\\DELL\\Downloads\\cv_Creater\\"+filename+".pdf";
 						
 			
 			PdfWriter w=new PdfWriter(dest);
@@ -239,7 +238,7 @@ public class cvWriter1 {
 			
 			
 			Cell proDetailsSpace=new Cell();
-			proDetailsSpace.add(" : ");
+			proDetailsSpace.add("  ");
 			proDetailsSpace.setFont(font);
 			proDetailsSpace.setFontSize(11);
 			proDetailsSpace.setBorder(Border.NO_BORDER);
@@ -298,6 +297,7 @@ public class cvWriter1 {
 			
 			if(count>0) {
 				doc.add(space0);
+				doc.add(space0);
 				
 				Cell pro1DetailCell1=new Cell();
 				pro1DetailCell1.add("Title ");
@@ -308,7 +308,7 @@ public class cvWriter1 {
 				
 				
 				Cell pro1DetailsSpace=new Cell();
-				pro1DetailsSpace.add(" : ");
+				pro1DetailsSpace.add("  ");
 				pro1DetailsSpace.setFont(font);
 				pro1DetailsSpace.setFontSize(11);
 				pro1DetailsSpace.setBorder(Border.NO_BORDER);
@@ -460,7 +460,7 @@ public class cvWriter1 {
 					float[] insdetailWidth= {63f,20f,365f};
 					Table insDetails=new Table(insdetailWidth);
 					Cell insDetailCell1=new Cell();
-					insDetailCell1.add("Training ");
+					insDetailCell1.add("Training Name ");
 					insDetailCell1.setFont(font);
 					insDetailCell1.setFontSize(11);
 					insDetailCell1.setBorder(Border.NO_BORDER);
@@ -468,7 +468,7 @@ public class cvWriter1 {
 					
 					
 					Cell insDetailsSpace=new Cell();
-					insDetailsSpace.add(" : ");
+					insDetailsSpace.add("  ");
 					insDetailsSpace.setFont(font);
 					insDetailsSpace.setFontSize(11);
 				    insDetailsSpace.setBorder(Border.NO_BORDER);
@@ -529,7 +529,7 @@ public class cvWriter1 {
 					Table ins1Details=new Table(ins1detailWidth);
 					
 				    Cell ins1DetailCell1=new Cell();
-					ins1DetailCell1.add("Training ");
+					ins1DetailCell1.add("Training Name ");
 					ins1DetailCell1.setFont(font);
 					ins1DetailCell1.setFontSize(11);
 					ins1DetailCell1.setBorder(Border.NO_BORDER);
@@ -537,7 +537,7 @@ public class cvWriter1 {
 					
 					
 					Cell ins1DetailsSpace=new Cell();
-					ins1DetailsSpace.add(" : ");
+					ins1DetailsSpace.add("  ");
 					ins1DetailsSpace.setFont(font);
 					ins1DetailsSpace.setFontSize(11);
 				    ins1DetailsSpace.setBorder(Border.NO_BORDER);

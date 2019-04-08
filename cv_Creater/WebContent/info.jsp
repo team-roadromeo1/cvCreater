@@ -205,12 +205,14 @@ if(name==null&&id==null){
 
 
 else{
+	System.out.println("We are at infromation view and key assets are: "+name+" and "+id);
 	session.setAttribute("name", name);
 	session.setAttribute("id", id);
 	
 }
 %>
 
+<% out.println("<center><h3>Please fill the information below to make save your cv "+name+".</h3></center>"); %>
 
 
 <br>

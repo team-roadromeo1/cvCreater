@@ -79,6 +79,9 @@ public class InfoSer extends HttpServlet {
         		 
          HttpSession session=request.getSession(true);
          String id=(String)session.getAttribute("id");
+         String can_name=(String)session.getAttribute("name");
+         
+         System.out.println("At infoser name: "+can_name+" id: "+id);
          
          InfoData data=new InfoData();
          data.setName(name);
@@ -135,13 +138,16 @@ public class InfoSer extends HttpServlet {
          int i=InfoDao.register(data);
          
          if(i>0) {
-        	System.out.println("Data Saved at client end."); 
+               	System.out.println("Data Saved at client end."); 
  			
- 				String user=(String)session.getAttribute("name");
- 			  session.setAttribute("name", user);
- 			  session.setAttribute("id", id);
- 			request.getRequestDispatcher("ServiceProfile").include(request, response);
- 			
+ 				
+ 			    session.setAttribute("name",can_name);
+ 			    session.setAttribute("id", id);
+ 			    pw.println("<script type=\"text/javascript\">");
+ 	  	        pw.println("alert('Your Cv Information is saved please click on save cv option to save your cv.');");
+ 	  			pw.println("location='ServiceProfile';");
+ 	  			pw.println("</script>");
+ 	            
            }
          else {
         	System.out.println("Data is not Saved.");

@@ -45,8 +45,7 @@ public class ServiceRegister extends HttpServlet {
        	    	HttpSession session=request.getSession(true);
                 session.setAttribute("name", name);
                 session.setAttribute("id", id);
-   				pw.println("<center><h3><font color='red'>Welcome "+name+" please fill the information given below about yourself.</font></h3></center>");
-       	        request.getRequestDispatcher("Information").include(request, response);;
+   			    request.getRequestDispatcher("ServiceProfile").include(request, response);;
        	    }
        	    else if(i==2) {
        	    	pw.println("<script type=\"text/javascript\">");	

@@ -443,12 +443,9 @@ else{
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="#"> </a>
+      <a class="nav-link" href="Information">Create</a>
     </li>
 
-    <li class="nav-item">
-      <a class="nav-link" href="#"> </a>
-    </li>
 
     <li class="nav-item">
       <a class="nav-link" href="#"> </a>
@@ -462,7 +459,6 @@ else{
        <%out.println(name); %>
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Edit Cv Profile</a>
         <a class="dropdown-item" href="#">Edit Account info</a>
         <a class="dropdown-item" href="com.cv.services.ServiceLogout">Logout</a>
       </div>
@@ -480,7 +476,12 @@ else{
 </div>
 
 <br>
-<center><button id="myBtn" class="b">Save cv</button></center>
+
+<center><button id="myBtn" class="b">Save cv</button></center>);
+
+	
+
+
 
 
 

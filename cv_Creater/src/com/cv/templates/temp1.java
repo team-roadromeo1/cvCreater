@@ -30,7 +30,9 @@ public class temp1 extends HttpServlet {
 	HttpSession session=request.getSession(true);
 	String filename=request.getParameter("filename");
 	String id=(String)session.getAttribute("id");
-	System.out.println("id checked at controller side value is: "+id);
+	String name=(String)session.getAttribute("name");
+	
+	System.out.println("id checked at controller side(temp1) value is: "+id);
 	
 	List<InfoData> list=CandidateDataFetch.getFetch(id);
 	
@@ -38,6 +40,8 @@ public class temp1 extends HttpServlet {
     System.out.println("Data is not available due to some problem at temp1");	
 	pw.println("<script type=\"text/javascript\">");
 	pw.println("alert('You cv is not save please check it out after some time.');");
+	session.setAttribute("id",id);
+	session.setAttribute("name", name);
 	pw.println("location='ServiceProfile';");
 	pw.println("</script>");
 	}
