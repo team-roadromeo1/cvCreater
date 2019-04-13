@@ -30,7 +30,7 @@ font-size:18px
 <input id="loginemail" placeholder="Email"  name="email" class="email" type="text">
 <input id="loginpassword" placeholder="Password" name="password" class="in" type="password">
 <input class="b" type="submit" value="Sign In">
-<p id="one"><a href="#">Forgot Password ?</a></p>
+<p id="one"><a href="password_reset">Forgot Password ?</a></p>
 <p id="two">Don't have account? <a class="signup" href="#" id="signup">Sign up here</a></p>
 <br>
 <center> <a class="signup" href="index.html" id="signup">Go to Home</a></center>

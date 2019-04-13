@@ -457,10 +457,10 @@ public class cvWriter1 {
 				 doc.add(space0);
 				 
 				 
-					float[] insdetailWidth= {63f,20f,365f};
+					float[] insdetailWidth= {75f,40f,365f};
 					Table insDetails=new Table(insdetailWidth);
 					Cell insDetailCell1=new Cell();
-					insDetailCell1.add("Training Name ");
+					insDetailCell1.add("Training");
 					insDetailCell1.setFont(font);
 					insDetailCell1.setFontSize(11);
 					insDetailCell1.setBorder(Border.NO_BORDER);
@@ -525,11 +525,11 @@ public class cvWriter1 {
 				}
 				
 				if(count1>0) {
-				    float[] ins1detailWidth= {63f,20f,365f};
+				    float[] ins1detailWidth= {75f,40f,365f};
 					Table ins1Details=new Table(ins1detailWidth);
 					
 				    Cell ins1DetailCell1=new Cell();
-					ins1DetailCell1.add("Training Name ");
+					ins1DetailCell1.add("Training");
 					ins1DetailCell1.setFont(font);
 					ins1DetailCell1.setFontSize(11);
 					ins1DetailCell1.setBorder(Border.NO_BORDER);

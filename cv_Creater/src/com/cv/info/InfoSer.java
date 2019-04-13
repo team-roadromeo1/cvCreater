@@ -81,8 +81,8 @@ public class InfoSer extends HttpServlet {
          String id=(String)session.getAttribute("id");
          String can_name=(String)session.getAttribute("name");
          
-         System.out.println("At infoser name: "+can_name+" id: "+id);
-         
+/*         System.out.println("At infoser name: "+can_name+" id: "+id);
+*/         
          InfoData data=new InfoData();
          data.setName(name);
          data.setEmail(email);
@@ -138,8 +138,8 @@ public class InfoSer extends HttpServlet {
          int i=InfoDao.register(data);
          
          if(i>0) {
-               	System.out.println("Data Saved at client end."); 
- 			
+/*               	System.out.println("Data Saved at client end."); 
+*/ 			
  				
  			    session.setAttribute("name",can_name);
  			    session.setAttribute("id", id);

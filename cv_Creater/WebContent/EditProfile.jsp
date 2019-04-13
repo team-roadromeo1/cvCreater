@@ -361,13 +361,6 @@ else{
     </li>
 
 
-    <li class="nav-item">
-      <a class="nav-link" href="#"> </a>
-    </li>
-
-    <li class="nav-item">
-      <a class="nav-link" href="#"> </a>
-    </li>
 
 
 
@@ -376,21 +369,15 @@ else{
     </li>
 
 
+
     <li class="nav-item">
-      <a class="nav-link" href="#"> </a>
+      <a class="nav-link" href="ServiceProfile">Home</a>
     </li>
 
 
     <li class="nav-item">
       <a class="nav-link" href="#"> </a>
     </li>
-
-
-    <li class="nav-item">
-      <a class="nav-link" href="#"> </a>
-    </li>
-
-
 
 
 
@@ -446,7 +433,7 @@ else{
       
       
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="Edit_Profile">Edit Account info</a>
+        <a class="dropdown-item" href="#">Edit Account info</a>
         <a class="dropdown-item" href="com.cv.services.ServiceLogout">Logout</a>
       </div>
     
@@ -465,10 +452,6 @@ else{
 <center><h3><% out.println("Welcome to cv_Creater "+name);%>
 </h3></center>
 </div>
-
-<br>
-
-<center><button id="myBtn" class="b">Save cv</button></center>
 
 	
 

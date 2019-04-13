@@ -19,8 +19,8 @@ public class MailSender {
 	public static int sendMail(String to,String subject,String message) {
 		int i=0;
 		
-		String from="mandalramesh603@gmail.com";
-		String fromPass="ramesh@12345";
+		String from="alert.fest@gmail.com";
+		String fromPass="fest@123456";
 		String emailServerPort="465";
 		String emailSMTPServer="smtp.gmail.com";
 		
@@ -51,7 +51,7 @@ public class MailSender {
 		    InternetAddress[] toAddress= {new InternetAddress(to)};
 		    msg.setRecipients(Message.RecipientType.TO,toAddress);
 			msg.setSubject(subject);
-			msg.setText(message);
+			msg.setContent(message,"text/html");
 			Transport.send(msg);
 			i++;
 		    System.out.println("Email send Successfully");

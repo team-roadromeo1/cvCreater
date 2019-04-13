@@ -30,7 +30,7 @@ public class MsgSender extends HttpServlet {
     data.setMessage(message);
     
     int i=MsgDao.Register(data);
-    int j=MailSender.sendMail("mandalramesh603@gmail.com","message by name: "+name+" email: "+email, message);
+    int j=MailSender.sendMail("alert.fest@gmail.com","message by name: "+name+" email: "+email, message);
     
     if(i>0&&j>0) {
           	System.out.println("Data Saved at navigated at controller.");

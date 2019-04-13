@@ -36,4 +36,44 @@
     <servlet-name>Profile</servlet-name>
     <url-pattern>/ServiceProfile</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>password_reset</servlet-name>
+    <jsp-file>/password_reset.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>password_reset</servlet-name>
+    <url-pattern>/password_reset</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>verify</servlet-name>
+    <jsp-file>/verify.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>verify</servlet-name>
+    <url-pattern>/verify_pin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>quick_cv</servlet-name>
+    <jsp-file>/quick_cv.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>quick_cv</servlet-name>
+    <url-pattern>/Quick_Cv_Information</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>quick_cv_save</servlet-name>
+  <jsp-file>/quick_cv_save.jsp</jsp-file>
+   </servlet>
+   <servlet-mapping>
+   <servlet-name>quick_cv_save</servlet-name>
+   <url-pattern>/Quick_Cv</url-pattern>
+   </servlet-mapping>
+   <servlet>
+  <servlet-name>EditProfile</servlet-name> 
+  <jsp-file>/EditProfile.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>EditProfile</servlet-name>
+  <url-pattern>/Edit_Profile</url-pattern>
+  </servlet-mapping>
 </web-app>

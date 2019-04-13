@@ -185,7 +185,7 @@ table {
  
 
 
- <%
+<%-- <%--  <%
 /* response.setHeader("Cache-Control","no-cache");
 response.setHeader("Cache-Control","no-store");
 response.setDateHeader("Expires", 0);
@@ -193,7 +193,7 @@ response.setHeader("Pragma","no-cache");
  */
 
 
-String name=(String)session.getAttribute("name");
+<%-- String name=(String)session.getAttribute("name");
 String id=(String)session.getAttribute("id");
 if(name==null&&id==null){
 	System.out.print("Attempt of Unauthenticated Access failed.");
@@ -211,15 +211,16 @@ else{
 	
 }
 %>
-
-<% out.println("<center><h3>Please fill the information below to make save your cv "+name+".</h3></center>"); %>
+ --%>
+ 
+ <% out.println("<center><h3>Please fill the information below to make save your cv "+"</h3></center>"); %>
 
 
 <br>
 <br>
 
 
-<form method="post" action="com.cv.info.InfoSer">
+<form method="post" action="com.cv.info.QuickInfoSer">
 
 <button class="collapsible">Personal Information</button>
 <!-- Personal Information  -->
