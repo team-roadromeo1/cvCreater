@@ -37,16 +37,16 @@ public static List<RegisterData> Login(String email,String password) {
 	
  	
     
-    System.out.println("Email at Dao: "+email);
-    
+/*    System.out.println("Email at Dao: "+email);
+*/    
     while(it.hasNext()) {
     Object o=(Object)it.next();
     RegisterData r=(RegisterData)o;
-    System.out.println("name: "+r.getName());
+/*    System.out.println("name: "+r.getName());
     System.out.println("email from the database: "+r.getEmail());
     System.out.println("password: "+r.getPassword());
     System.out.println("contact: "+r.getContact());
-    if(email.equals(r.getEmail())&&password.equals(r.getPassword())) {
+*/    if(email.equals(r.getEmail())&&password.equals(r.getPassword())) {
     	record.add(r);
     }
     else {

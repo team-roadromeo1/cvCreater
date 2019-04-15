@@ -62,7 +62,7 @@ public class ResetPassword extends HttpServlet {
 			}
 			else {
 				MailSender.sendMail(email, "Reset Password","verfication code for reset password is: "+key+" applicable for only one time.");		
-				pw.println("<center><h3><font color='red'>verfication code is sent to your email please check your inbox.</font></h3></center>");
+				pw.println("<center><h3><font color='green'>verfication code is sent to your email please check your inbox.</font></h3></center>");
 				request.getRequestDispatcher("verify_pin").include(request, response);
 			}
 			

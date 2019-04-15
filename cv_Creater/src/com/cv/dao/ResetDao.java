@@ -27,8 +27,8 @@ public static String Check(String email) {
 	while(it.hasNext()) {
 		Object o=(Object)it.next();
 		RegisterData d=(RegisterData)o;
-		System.out.println("User Email at dao is: "+d.getEmail());
-		str=d.getEmail();
+/*		System.out.println("User Email at dao is: "+d.getEmail());
+*/		str=d.getEmail();
 	}
 	
 	

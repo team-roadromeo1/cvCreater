@@ -2,6 +2,10 @@ package com.cv.info;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.mail.Session;
 import javax.servlet.RequestDispatcher;
@@ -76,7 +80,9 @@ public class InfoSer extends HttpServlet {
          String h3=request.getParameter("h3");
          String h4=request.getParameter("h4");
          String h5=request.getParameter("h5");
-        		 
+         String creation_date=InfoSer.getCurrentDate();
+         String creation_time=InfoSer.getCurrentTime();
+         
          HttpSession session=request.getSession(true);
          String id=(String)session.getAttribute("id");
          String can_name=(String)session.getAttribute("name");
@@ -134,6 +140,8 @@ public class InfoSer extends HttpServlet {
          data.setH4(h4);
          data.setH5(h5);
          data.setId(id);
+         data.setDate(creation_date);
+         data.setTime(creation_time);
          
          int i=InfoDao.register(data);
          
@@ -159,5 +167,24 @@ public class InfoSer extends HttpServlet {
          }
          
 	}
-
+   public static String getCurrentTime() {
+	String time;
+	Calendar cal=Calendar.getInstance();
+	Date date=cal.getTime();
+	DateFormat format=new SimpleDateFormat("hh:mm:ss a");
+	time=format.format(date);
+	System.out.println("Creation time is: "+time);
+	
+	return time;
+}
+   
+   public static String getCurrentDate() {
+	   String Currentdate;
+	   Date date=new Date();
+	   DateFormat format=new SimpleDateFormat("dd/MM/yy");
+	   Currentdate=format.format(date);
+	   System.out.println("Creation date is: "+Currentdate);
+	   
+	   return Currentdate;
+   }
 }

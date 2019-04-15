@@ -37,7 +37,7 @@ import com.cv.dao.ChangePasswordDao;
 	    	/*System.out.println("password changed at controller end.");
 	    	*/
 	    	session.invalidate();
-	    	pw.println("<center><h3><font color='red'>Password Changed Successfully.</font></h3></center>");
+	    	pw.println("<center><h3><font color='green'>Password Changed Successfully.</font></h3></center>");
 	    	request.getRequestDispatcher("Login").include(request, response);
 	    	
 	    }

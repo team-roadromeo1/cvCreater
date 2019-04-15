@@ -36,8 +36,8 @@ public class cvWriter1 {
 			while(it.hasNext()) {
 				Object o=(Object)it.next();
 				InfoData in=(InfoData)o;
-				System.out.println("candidateName at cvwriter: "+in.getName());
-				writerData=in;
+/*				System.out.println("candidateName at cvwriter: "+in.getName());
+*/				writerData=in;
 				}
 			
 			
@@ -52,6 +52,8 @@ public class cvWriter1 {
 			
 		    Document doc = new Document(pdoc);
 		     
+		   
+		    
 			//Name.
 			String name_str=writerData.getName();
 			Paragraph name=new Paragraph(name_str);

@@ -76,6 +76,8 @@ public class QuickInfoSer extends HttpServlet {
       String h3=request.getParameter("h3");
       String h4=request.getParameter("h4");
       String h5=request.getParameter("h5");
+      String creation_date=InfoSer.getCurrentDate();
+      String creation_Time=InfoSer.getCurrentTime();
       
       InfoData data=new InfoData();
       data.setName(name);
@@ -127,6 +129,8 @@ public class QuickInfoSer extends HttpServlet {
       data.setH3(h3);
       data.setH4(h4);
       data.setH5(h5);
+      data.setDate(creation_date);
+      data.setTime(creation_Time);
       
       int i=InfoDao.register(data);
       

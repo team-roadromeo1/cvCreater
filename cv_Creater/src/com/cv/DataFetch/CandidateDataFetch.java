@@ -14,14 +14,11 @@ import com.cv.data.InfoData;
 
 public class CandidateDataFetch {
 
-	public static List<InfoData> getFetch(String id) {
-		InfoData data=new InfoData();
+	public static List<InfoData> getFetch(String id,String time) {
 		
 		Session session=DataConnector.getConnect();
         Transaction t=session.beginTransaction();
-        String name=id;
  
-        System.out.println("and id at: "+name);
        
        Query q=session.createQuery("from InfoData data where id=:id");
         q.setParameter("id", id);
@@ -29,18 +26,35 @@ public class CandidateDataFetch {
         List list=q.list();
         Iterator it=list.iterator();
         
-        List<InfoData> record=new ArrayList<InfoData>();
+        List<InfoData> rec=new ArrayList<InfoData>();
         
         while(it.hasNext()) {
         	Object o=(Object)it.next();
         	InfoData d=(InfoData)o;
-        	System.out.println("candidate-name: "+d.getName());
+        	/*System.out.println("candidate-name: "+d.getName());
         	System.out.println("Candidate-id: "+d.getId());
-        	record.add(d); 
+        	*/rec.add(d); 
         }
         
+        Iterator it1=rec.iterator();
+        List<InfoData> record=new ArrayList<InfoData>();
         
-        
+        while(it1.hasNext()) {
+        	Object o=(Object)it1.next();
+        	InfoData d=(InfoData)o;
+        	if(d.getTime().equals(time)) {
+        	/*	System.out.println("Creation time is: "+d.getTime());
+        		System.out.println("name is: "+d.getName());
+        	*/	record.add(d);
+        	}
+        }
+      /*  if(record.isEmpty()) {
+        	System.out.println("Record is empty here");
+        	}
+        else {
+        	System.out.println("Record is not empty here");
+        }
+      */  
         return record;
 	}
 }

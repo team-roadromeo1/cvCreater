@@ -4,9 +4,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Information</title>
+
   <link href="css/collapsible.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link href="css/showhide.css" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="js/showhide.js"></script>
+
+
  <style>
+.navbar .navbar-nav {
+    color:white;
+    font-size: 18px;
+    margin: 8px 0;
+    float:right;
+}
+
+.navbar  .navbar-brand {
+    color: white !important;
+    font-size: 25px;
+    margin: 8px 0;
+}
+
+.navbar  .nav-link{
+color:white;
+}
+
  
    body {
   margin: 0;
@@ -117,7 +147,6 @@ background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
  padding:10px 8px;
  border-radius:15px;
  border-color:transparent;
- font-size: 15px;
  }
 
  .txtedu{
@@ -186,11 +215,10 @@ table {
 
 
  <%
-/* response.setHeader("Cache-Control","no-cache");
-response.setHeader("Cache-Control","no-store");
-response.setDateHeader("Expires", 0);
-response.setHeader("Pragma","no-cache");
- */
+ response.setHeader("Cache-Control","no-cache");
+ response.setHeader("Cache-Control","no-store");
+ response.setDateHeader("Expires", 0);
+ response.setHeader("Pragma","no-cache");
 
 
 String name=(String)session.getAttribute("name");
@@ -212,10 +240,286 @@ else{
 }
 %>
 
-<% out.println("<center><h3>Please fill the information below to make save your cv "+name+".</h3></center>"); %>
+<nav class="navbar navbar-expand-sm  bg-dark  fixed-top ">
+  <a class="navbar-brand" href="#">cv_Creater</a>
+  <ul class="navbar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+
+
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+
+
+    <li class="nav-item">
+      <a class="nav-link" href="ServiceProfile">Home</a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+<div id="main">
+<!-- Create Div First For Login Form -->
+<div id="first">
+   <span class="close" title="close the tab">&times;</span>
+  <form action="com.cv.templates.temp1" method="post">
+  <br>
+  <br>
+  
+
+<center><input name="filename" placeholder="File Name"  class="txt" type="text" title="Save your cv with your desired name." required><br>
+<input  type="submit" class="b" value="Save">
+<br>
+<br>
+</center>
+</form>
+</div>
+  </div>
+     </div>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#">Create</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+
+
+    <li class="nav-item">
+      <a class="nav-link" href="com.cv.showrecord.History">Open</a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"> </a>
+    </li>
+
+
+
+
+<li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+       <%out.println(name); %>
+      </a>
+      
+      
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="Edit_Profile">Edit Account info</a>
+        <a class="dropdown-item" href="com.cv.services.ServiceLogout">Logout</a>
+      </div>
+    
+    </li>
+
+  </ul>
+  
+  
+  
+</nav>
 
 
 <br>
+
+
+<div class="container-fluid" style="margin-top:80px">
+<% out.println("<center><h3>Please fill the information below to make save your cv "+name+".</h3></center>"); %>
+
+
 <br>
 
 
@@ -877,7 +1181,7 @@ for the correctness of the above-mentioned particulars.  </font></h3>
 </div>
 
 
-<br>
+
 <br>
 <br>
 
@@ -885,6 +1189,8 @@ for the correctness of the above-mentioned particulars.  </font></h3>
 <center> <input type="submit" class="btn" value="Save">&nbsp<input type="reset" class="btn" value="Reset">
 </center>
 </form>
+
+</div>
 
 <script type="text/javascript">
 var coll = document.getElementsByClassName("collapsible");

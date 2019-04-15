@@ -23,8 +23,8 @@ public static int register(RegisterData data) {
 	while(it.hasNext()) {
 		Object o=(Object)it.next();
 		RegisterData r=(RegisterData)o;
-		System.out.println("Email: "+r.getEmail());
-		if(email.equals(r.getEmail())) {
+/*		System.out.println("Email: "+r.getEmail());
+*/		if(email.equals(r.getEmail())) {
 			count++;
 			break;
 		}

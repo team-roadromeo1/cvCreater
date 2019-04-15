@@ -36,7 +36,7 @@ public class Resend_email extends HttpServlet {
 		MailSender.sendMail(email, "Reset Password","verfication code for reset password is: "+key+" applicable for only one time.");
 /*		System.out.println("Email of verification code is sent again to uset we are at resend controller and key is :"+key);
 */	    session.setAttribute("key",key);
-		pw.println("<center><h3><font color='red'>verfication code is sent to your email please check your inbox.</font></h3></center>");
+		pw.println("<center><h3><font color='green'>verfication code is sent to your email please check your inbox.</font></h3></center>");
 		request.getRequestDispatcher("verify_pin").include(request, response);
 		} catch (Exception e) {
 		// TODO Auto-generated catch block

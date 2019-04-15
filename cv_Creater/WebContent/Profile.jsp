@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -125,6 +125,10 @@ text-shadow:0 1px 0 #13506D
  font-size: 15px;
  }
 
+
+body{
+background-color:F1F1F1;
+}
 <link href="showhide.css" rel="stylesheet">
 
 </style>
@@ -428,7 +432,7 @@ else{
 
 
     <li class="nav-item">
-      <a class="nav-link" href="#">Open</a>
+      <a class="nav-link" href="com.cv.showrecord.History">Open</a>
     </li>
 
 
@@ -468,7 +472,6 @@ else{
 
 <br>
 
-<center><button id="myBtn" class="b">Save cv</button></center>
 
 	
 

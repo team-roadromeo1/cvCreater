@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import com.cv.DataFetch.CandidateDataFetch;
 import com.cv.cvWriter.cvWriter1;
 import com.cv.data.InfoData;
+import com.cv.services.ResetPassword;
 
 
 @WebServlet("/com.cv.templates.temp1")
@@ -31,10 +32,14 @@ public class temp1 extends HttpServlet {
 	String filename=request.getParameter("filename");
 	String id=(String)session.getAttribute("id");
 	String name=(String)session.getAttribute("name");
-	
-	System.out.println("id checked at controller side(temp1) value is: "+id);
-	
-	List<InfoData> list=CandidateDataFetch.getFetch(id);
+	String time=request.getParameter("time");
+	String type=request.getParameter("type");
+	/*System.out.println("File types is: "+type);
+	System.out.println("Creation time is: "+time);
+	*/
+/*	System.out.println("id checked at controller side(temp1) value is: "+id);
+*/	
+	List<InfoData> list=CandidateDataFetch.getFetch(id,time);
 	
 	if(list.isEmpty()) {
     System.out.println("Data is not available due to some problem at temp1");	
@@ -47,10 +52,14 @@ public class temp1 extends HttpServlet {
 	}
 	else {
 	try {
-		int status=cvWriter1.getWrite(list, filename);
-		if(status>0) {
-			System.out.println("Data is writed in the pdf at profile now.");
-			pw.println("<script type=\"text/javascript\">");
+		if(filename==null) {
+			filename="cv_Creater"+ResetPassword.generatePin();
+		}
+		
+	     	int status=cvWriter1.getWrite(list, filename);
+		    if(status>0) {
+/*			System.out.println("Data is writed in the pdf at profile now.");
+*/			pw.println("<script type=\"text/javascript\">");
 			pw.println("alert('You cv is save in your machine please check it out.');");
 			pw.println("location='ServiceProfile';");
 			pw.println("</script>");

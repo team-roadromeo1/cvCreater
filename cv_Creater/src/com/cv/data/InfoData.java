@@ -50,13 +50,6 @@ public class InfoData {
 	@Column(name="dgree_name")
 	private String dgree_name;
 	
-    public String getDgree_name() {
-		return dgree_name;
-	}
-
-	public void setDgree_name(String dgree_name) {
-		this.dgree_name = dgree_name;
-	}
 
 	@Column(name="obj")
 	private String obj;
@@ -168,7 +161,40 @@ public class InfoData {
 	
 	@Column(name="id")
     private String id; 
+
+	@Column(name="creation_date")
+	private String date;
+
 	
+	@Column(name="creation_time")
+	private String time;
+	
+	
+    public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getDgree_name() {
+		return dgree_name;
+	}
+
+	public void setDgree_name(String dgree_name) {
+		this.dgree_name = dgree_name;
+	}
+
+	
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
 	public String getId() {
 		return id;
 	}

@@ -30,12 +30,12 @@ public class ServiceLogin extends HttpServlet {
             String email=request.getParameter("email");
             String password=request.getParameter("password");
 	       
-            System.out.println("Email at the controller side: "+email);
-            
+     /*       System.out.println("Email at the controller side: "+email);
+     */       
             List<RegisterData> record=LoginDao.Login(email, password);
            
-            System.out.println("Again at controller");
-           
+/*            System.out.println("Again at controller");
+*/           
             if(record.isEmpty()) {
             System.out.println("username or password incorrect.");
             request.getRequestDispatcher("Login").include(request, response);
@@ -55,9 +55,9 @@ public class ServiceLogin extends HttpServlet {
                   	Object o=(Object)it.next();
                   	RegisterData r=(RegisterData)o;
                   System.out.println("login attempt success");
-                  System.out.println("name: "+r.getName());
+     /*             System.out.println("name: "+r.getName());
                   System.out.println("id: "+r.getId());
-                  session.setAttribute("name",r.getName());
+     */             session.setAttribute("name",r.getName());
                   session.setAttribute("id", r.getId());
                   }
                   request.getRequestDispatcher("ServiceProfile").forward(request, response);

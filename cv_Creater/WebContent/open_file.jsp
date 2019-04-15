@@ -72,7 +72,7 @@ color:white;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 100%;
 }
 
 /* The Close Button */
@@ -109,26 +109,87 @@ background:linear-gradient(to bottom,#22abe9 5%,#36caf0 100%);
 box-shadow:inset 0 1px 0 0 #7bdcf4;
 border:1px solid #0F799E;
 color:#fff;
-width:306px;
-height:40px;
-margin-top:15px;
-font-size:18px;
-font-weight:700;
+width:130px;
 cursor:pointer;
 text-shadow:0 1px 0 #13506D
 	
 }
+
+.b:hover{
+background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
+ }
 
 .txt{
  width:306px;
  height:50px;
  padding:10px 8px;
  border-radius:15px;
- border-color:transparent;
+ border-color:aqua;
  font-size: 15px;
  }
+ 
+
+
+#f{
+width:800px;
+height:800px;
+background-color:#F8F8FF;
+border:1px solid;
+border-radius:5px;
+border-color:CBC8C8;
+position:absolute;
+left:50%;
+margin-left:-180px;
+top:0
+}
 
 <link href="showhide.css" rel="stylesheet">
+
+body{
+background-color:F1F1F1;
+}
+
+table {
+	border: 1px solid black;
+	outline-color: black;
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	
+}
+
+table td {
+	width: 50%;
+	border: 1px solid black;
+	padding: 10px;
+	text-align: center;
+	
+}
+ 
+ table th{
+ text-align: center;
+	border: 1px solid black;
+ 
+ }
+
+table caption {
+	font-style: italic;
+}
+
+#first{
+width:340px;
+margin-top:0;
+padding:28px 25px;
+background-color:#F8F8FF;
+border:1px solid;
+border-radius:5px;
+border-color:CBC8C8;
+position:absolute;
+left:50%;
+margin-left:-180px;
+top:0
+}
+
 
 </style>
 
@@ -397,7 +458,7 @@ else{
   <br>
   
 
-<center><input name="filename" placeholder="File Name"  class="txt" type="text" title="Save your cv with your desired name." required><br>
+<center><h3 style="color: black;">Type File Name</h3><br><input name="filename" placeholder="File Name"  class="txt" type="text" title="Save your cv with your desired name." required><br>
 <input  type="submit" class="b" value="Save">
 <br>
 <br>
@@ -436,7 +497,7 @@ else{
       
       
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Edit Account info</a>
+        <a class="dropdown-item" href="Edit_Profile">Edit Account info</a>
         <a class="dropdown-item" href="com.cv.services.ServiceLogout">Logout</a>
       </div>
     
@@ -450,20 +511,42 @@ else{
 
 
 
-
 <div class="container-fluid" style="margin-top:80px">
-<div id="main">
-<!-- Create Div First For Login Form -->
-<div id="first">
-<font size="3"><a href="password_reset">Change Password</a></font><br>
-<font size="3"><a href="#">Change Email</a></font>
-<form action="com.cv.services.ResetPassword" method="post">
+<center><h3>History
+</h3>
+<br>
+<br>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+
+<c:if test="${not empty requestScope.record}" var="b">
+<table> <!--  border="1px" bordercolor="black" style="text-align: center;" -->
+<tr>
+<th>Name</th>
+<th>Contact</th>
+<th>Creation Date</th>
+<th>Creation Time</th>
+<th>Creation</th>
+</tr>
+<c:forEach items="${requestScope.record}" var="a">
+<form action="com.cv.templates.temp1" method="post">
+<input type="hidden" value="<c:out value='${a.time}'/>" name="time">
+<tr>
+<td><c:out value="${a.name}"/></td>
+<td><c:out value="${a.phone}"/></td>
+<td><c:out value="${a.date}"/></td>
+<td><c:out value="${a.time}"/></td>
+<td><input type="submit" class="b" value="Create Cv"></td>
+</tr>
 </form>
-</div>
-</div>
+</c:forEach>
+</table>
+</c:if>
+</center>
 </div>
 
-
+	<c:if test="${ empty requestScope.record}" var="b">
+<center><div class="h2"><img alt="No Data Found" src="img/Empty.png" height="400px" width="800px"></div></center>
+</c:if>
 	
 
 
