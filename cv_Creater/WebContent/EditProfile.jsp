@@ -456,7 +456,7 @@ else{
 <!-- Create Div First For Login Form -->
 <div id="first">
 <font size="3"><a href="password_reset">Change Password</a></font><br>
-<font size="3"><a href="#">Change Email</a></font>
+<font size="3"><a href="email_reset">Change Email</a></font>
 <form action="com.cv.services.ResetPassword" method="post">
 </form>
 </div>

@@ -84,4 +84,12 @@
     <servlet-name>open_file</servlet-name>
     <url-pattern>/open_file</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>email_reset</servlet-name>
+    <jsp-file>/email_reset.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>email_reset</servlet-name>
+    <url-pattern>/email_reset</url-pattern>
+  </servlet-mapping>
 </web-app>
