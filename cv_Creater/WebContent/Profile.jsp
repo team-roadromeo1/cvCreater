@@ -450,7 +450,9 @@ else{
       
       
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="Edit_Profile">Edit Account info</a>
+        <a class="dropdown-item" href="password_reset">Change Password</a>
+        <a class="dropdown-item" href="email_reset">Change Email</a>
+        <a class="dropdown-item" href="com.cv.showrecord.Histroy_for_updation">Change Cv info</a>
         <a class="dropdown-item" href="com.cv.services.ServiceLogout">Logout</a>
       </div>
     

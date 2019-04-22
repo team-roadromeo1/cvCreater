@@ -445,6 +445,28 @@ else{
 
 
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+<div id="main">
+<!-- Create Div First For Login Form -->
+<div id="first">
+   <span class="close" title="close the tab">&times;</span>
+  <form action="com.cv.templates.temp1" method="post">
+  <br>
+  <br>
+  
+
+<center><h3 style="color: black;">Type File Name</h3><br><input name="filename" placeholder="File Name"  class="txt" type="text" title="Save your cv with your desired name." required><br>
+<input  type="submit" class="b" value="Save">
+<br>
+<br>
+</center>
+</form>
+</div>
+  </div>
+     </div>
 
     <li class="nav-item">
       <a class="nav-link" href="Information">Create</a>
@@ -457,7 +479,7 @@ else{
 
 
     <li class="nav-item">
-      <a class="nav-link" href="#">Open</a>
+      <a class="nav-link" href="com.cv.showrecord.History">Open</a>
     </li>
 
 
@@ -477,7 +499,7 @@ else{
       <div class="dropdown-menu">
         <a class="dropdown-item" href="password_reset">Change Password</a>
         <a class="dropdown-item" href="email_reset">Change Email</a>
-        <a class="dropdown-item" href="com.cv.showrecord.Histroy_for_updation">Change Cv Info</a>
+        <a class="dropdown-item" href="#">Change Cv Info</a>
         <a class="dropdown-item" href="com.cv.services.ServiceLogout">Logout</a>
       </div>
     
@@ -508,14 +530,14 @@ else{
 <th>Creation</th>
 </tr>
 <c:forEach items="${requestScope.record}" var="a">
-<form action="com.cv.templates.temp1" method="post">
+<form action="com.cv.info.ResetInfoSer" method="post">
 <input type="hidden" value="<c:out value='${a.time}'/>" name="time">
 <tr>
 <td><c:out value="${a.name}"/></td>
 <td><c:out value="${a.phone}"/></td>
 <td><c:out value="${a.date}"/></td>
 <td><c:out value="${a.time}"/></td>
-<td><input type="submit" class="b" value="Create Cv"></td>
+<td><input type="submit" class="b" value="Update Info"></td>
 </tr>
 </form>
 </c:forEach>

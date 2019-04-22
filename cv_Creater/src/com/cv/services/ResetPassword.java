@@ -24,8 +24,9 @@ public class ResetPassword extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter pw=response.getWriter();
 		
+		HttpSession session=request.getSession();
+		
 		String email=request.getParameter("email");
-        
 /*		System.out.println("email is at controller: "+email);
 		
 */		String verifiedEmail=ResetDao.Check(email);
@@ -45,16 +46,11 @@ public class ResetPassword extends HttpServlet {
 			int pin=ResetPassword.generatePin();
 			String key=Integer.toString(pin);
 			
-			HttpSession oldSession=request.getSession();
-			if(oldSession!=null) {
-				oldSession.invalidate();
-			}
-		    
-/*			System.out.println("Key is generated and values is: "+key);
-*/			HttpSession session=request.getSession();
-			session.setAttribute("key", key);
-			session.setAttribute("email", verifiedEmail);
 			
+/*			System.out.println("Key is generated and values is: "+key);
+*/			session.setAttribute("key", key);
+			session.setAttribute("email", verifiedEmail);
+		
 			
 			if((verifiedEmail==null)&&(verifiedEmail!=email)){
 				pw.println("<center><h3><font color='red'>Please enter only registered email.</font></h3></center>");

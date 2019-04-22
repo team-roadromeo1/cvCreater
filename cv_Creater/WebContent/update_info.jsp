@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,13 +8,65 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/collapsible.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<link href="css/showhide.css" rel="stylesheet">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="js/showhide.js"></script>
+  <script src="js/collapsible.js"></script>
 <style>
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	
+}
+
+table td {
+    color:white;
+    font-size:20px;
+    font-style:italic;
+    width: 25%;
+	padding: 10px;
+	text-align: center;
+	
+}
+ 
+ table th{
+    text-align: center;
+      font-size: 20px;
+      font-style: italic;
+      color: white;
+ }
+
+table caption {
+	font-style: italic;
+}
+
+.collapsible {
+  background:linear-gradient(to bottom,#22abe9 5%,#36caf0 100%);
+  box-shadow:inset 0 1px 0 0 #7bdcf4;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
+	}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #333;
+}
+
 .navbar .navbar-nav {
     color:white;
     font-size: 18px;
@@ -72,7 +124,7 @@ color:white;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 100%;
+  width: 80%;
 }
 
 /* The Close Button */
@@ -109,87 +161,30 @@ background:linear-gradient(to bottom,#22abe9 5%,#36caf0 100%);
 box-shadow:inset 0 1px 0 0 #7bdcf4;
 border:1px solid #0F799E;
 color:#fff;
-width:130px;
+width:306px;
+height:40px;
+margin-top:15px;
+font-size:18px;
+font-weight:700;
 cursor:pointer;
 text-shadow:0 1px 0 #13506D
 	
 }
-
-.b:hover{
-background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
- }
 
 .txt{
  width:306px;
  height:50px;
  padding:10px 8px;
  border-radius:15px;
- border-color:aqua;
+ border-color:transparent;
  font-size: 15px;
  }
- 
 
-
-#f{
-width:800px;
-height:800px;
-background-color:#F8F8FF;
-border:1px solid;
-border-radius:5px;
-border-color:CBC8C8;
-position:absolute;
-left:50%;
-margin-left:-180px;
-top:0
-}
-
-<link href="showhide.css" rel="stylesheet">
 
 body{
 background-color:F1F1F1;
 }
-
-table {
-	border: 1px solid black;
-	outline-color: black;
-	table-layout: fixed;
-	width: 100%;
-	border-collapse: collapse;
-	
-}
-
-table td {
-	width: 50%;
-	border: 1px solid black;
-	padding: 10px;
-	text-align: center;
-	
-}
- 
- table th{
- text-align: center;
-	border: 1px solid black;
- 
- }
-
-table caption {
-	font-style: italic;
-}
-
-#first{
-width:340px;
-margin-top:0;
-padding:28px 25px;
-background-color:#F8F8FF;
-border:1px solid;
-border-radius:5px;
-border-color:CBC8C8;
-position:absolute;
-left:50%;
-margin-left:-180px;
-top:0
-}
-
+<link href="showhide.css" rel="stylesheet">
 
 </style>
 
@@ -425,12 +420,16 @@ else{
     </li>
 
 
-
-
-
     <li class="nav-item">
       <a class="nav-link" href="#"> </a>
     </li>
+
+
+
+
+
+
+
 
 
 
@@ -446,6 +445,8 @@ else{
 
 
 
+
+
     <li class="nav-item">
       <a class="nav-link" href="Information">Create</a>
     </li>
@@ -457,7 +458,7 @@ else{
 
 
     <li class="nav-item">
-      <a class="nav-link" href="#">Open</a>
+      <a class="nav-link" href="com.cv.showrecord.History">Open</a>
     </li>
 
 
@@ -477,7 +478,7 @@ else{
       <div class="dropdown-menu">
         <a class="dropdown-item" href="password_reset">Change Password</a>
         <a class="dropdown-item" href="email_reset">Change Email</a>
-        <a class="dropdown-item" href="com.cv.showrecord.Histroy_for_updation">Change Cv Info</a>
+        <a class="dropdown-item" href="com.cv.showrecord.Histroy_for_updation">Change Cv info</a>
         <a class="dropdown-item" href="com.cv.services.ServiceLogout">Logout</a>
       </div>
     
@@ -490,89 +491,201 @@ else{
 </nav>
 
 
+<br>
+
+
 
 <div class="container-fluid" style="margin-top:80px">
-<center><h3>History
-</h3>
 <br>
 <br>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
-
 <c:if test="${not empty requestScope.record}" var="b">
-<table> <!--  border="1px" bordercolor="black" style="text-align: center;" -->
-<tr>
-<th>Name</th>
-<th>Contact</th>
-<th>Creation Date</th>
-<th>Creation Time</th>
-<th>Creation</th>
-</tr>
 <c:forEach items="${requestScope.record}" var="a">
-<form action="com.cv.templates.temp1" method="post">
-<input type="hidden" value="<c:out value='${a.time}'/>" name="time">
+
+<form action="#" method="post">
+<button class="collapsible">Personal Information</button>
+<!-- Personal Information  -->
+<div class="content">
+<input type="hidden" value="<c:out value='${a.time}'/>" name="time" >
+
+<table>
 <tr>
-<td><c:out value="${a.name}"/></td>
-<td><c:out value="${a.phone}"/></td>
-<td><c:out value="${a.date}"/></td>
-<td><c:out value="${a.time}"/></td>
-<td><input type="submit" class="b" value="Create Cv"></td>
+<td>Name</td>
+<td>
+<input type="text" name="name" class="txt" placeholder="Full Name" value="<c:out value='${a.name}'/>"  required>
+</td>
+
 </tr>
-</form>
-</c:forEach>
+
+<tr>
+<td>Email</td>
+<td>
+<input type="email" name="email" class="txt" placeholder="Your Email." value="<c:out value='${a.email}'/>"  required>
+</td>
+
+
+</tr>
+<tr>
+<td>Contact</td>
+<td>
+<input type="text" name="no" class="txt" placeholder="Your Contact no." pattern="[0-9]{10}" value="<c:out value='${a.phone}'/>" required>
+</td>
+</tr>
+
 </table>
-</c:if>
-</center>
+<table>
+<tr>
+<td>Address</td>
+<td>
+<textarea cols="60" rows="10" name="address"  placeholder="Your Address*"  required><c:out value='${a.address}'/></textarea>
+</td>
+</tr>
+</table>
+<br>
 </div>
 
-	<c:if test="${ empty requestScope.record}" var="b">
-<center><div class="h2"><img alt="No Data Found" src="img/Empty.png" height="400px" width="800px"></div></center>
+<br>
+<br>
+
+
+<button class="collapsible">Educational Information</button>
+<!-- Educational Information  -->
+<div class="content">
+<table>
+<tr>
+<th>Class</th>
+<th>Year of passing</th>
+<th>Percentage</th>
+<th>Institute</th>
+</tr>
+<tr>
+<td>10th</td>
+<td>
+<input type="text" name="edu1" class="txtedu" placeholder="Year of passing" value="<c:out value='${a.ssc}'/>"  required>
+</td>
+
+
+
+<td>
+<input type="text"  name="ssc" class="txtedu" placeholder="Your 10th percentage." value="<c:out value='${a.ssc_per}'/>"  required>
+</td>
+
+
+
+<td>
+<input type="text" name="ssc_ins" class="txtedu" placeholder="Name of the Institute." value="<c:out value='${a.ssc_ins}'/>"  required>
+</td>
+
+</tr>
+</table>
+
+<table>
+<tr>
+<td>12th</td>
+<td>
+<input type="text" name="edu2" class="txtedu" placeholder="Year of passing" value="<c:out value='${a.hsc}'/>"  required>
+</td>
+
+
+
+<td>
+<input type="text" name="hsc" class="txtedu" placeholder="Your 12th percentage." value="<c:out value='${a.hsc_per}'/>" required>
+</td>
+
+
+
+<td>
+<input type="text" name="hsc_ins" class="txtedu" placeholder="Name of the Institute." value="<c:out value='${a.hsc_ins}'/>" required>
+</td>
+
+</tr>
+</table>
+
+
+<table>
+<tr>
+<td>
+<input type="text" name="dgree_name" class="txtedu" placeholder="Dgree Name" value="<c:out value='${a.dgree_name}'/>"  required>
+</td>
+<td>
+<input type="text" name="edu3" class="txtedu" placeholder="Year of passing" value="<c:out value='${a.dgree}'/>"  required>
+</td>
+
+
+
+
+<td>
+<input type="text" name="dgree_per" class="txtedu" placeholder="Overall percentage(in %)." value="<c:out value='${a.dgree_per}'/>"  required>
+</td>
+
+
+
+<td>
+<input type="text" name="dgree_ins" class="txtedu" placeholder="Name of the institute." value="<c:out value='${a.dgree_ins}'/>"  required>
+</td>
+
+
+</tr>
+<tr>
+
+</tr>
+
+</table>
+<br>
+</div>
+
+<button class="collapsible">Objective</button>
+<!--Objective  -->
+<div class="content">
+<br>
+<textarea cols="120" rows="10" class="ta" name="obj" placeholder="Your Objective*"  required></textarea>
+<br>
+</div>
+
+
+
+
+</form>
+</c:forEach>
 </c:if>
-	
+</div>
 
 
 
 
 
-<SCRIPT type="text/javascript">
-window.history.forward();
-function noBack() { window.history.forward(); }
 
 
 
-//Get the modal
-var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
+
+
+
+
+
+
+<script>
+
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-
-$("#folderName").change(function() {
-        var sourceVal = document.getElementById("folderName").files[0].path;
-        $("#sourceDirPath").val(sourceVal);
-    });
-
-
-</SCRIPT>
+</script>
 
 </body>
 </html>

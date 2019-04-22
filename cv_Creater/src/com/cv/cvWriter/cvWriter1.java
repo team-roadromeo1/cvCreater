@@ -523,7 +523,7 @@ public class cvWriter1 {
 				     	
 				int count1=0;
 				if(writerData.getT2name()!=null) {
-					count++;
+					count1++;
 				}
 				
 				if(count1>0) {

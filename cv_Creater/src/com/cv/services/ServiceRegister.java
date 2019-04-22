@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import com.cv.dao.RegisterDao;
 import com.cv.data.RegisterData;
+import com.cv.msg.MailSender;
 
 
 @WebServlet("/com.cv.services.ServiceRegister")
@@ -45,7 +46,8 @@ public class ServiceRegister extends HttpServlet {
        	    	HttpSession session=request.getSession(true);
                 session.setAttribute("name", name);
                 session.setAttribute("id", id);
-   			    request.getRequestDispatcher("ServiceProfile").include(request, response);;
+                MailSender.sendMail(email,"Welcome to cv_Creater", "Welcome to cv_Creater "+name+" we hope we can make your cv better than ever thanks for join us.");
+   			    request.getRequestDispatcher("ServiceProfile").include(request, response);
        	    }
        	    else if(i==2) {
        	    	pw.println("<script type=\"text/javascript\">");	

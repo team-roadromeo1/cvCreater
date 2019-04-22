@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.cv.dao.ChangePasswordDao;
+import com.cv.msg.MailSender;
 
         @WebServlet("/com.cv.services.ChangePassword")
         public class ChangePassword extends HttpServlet {
@@ -37,6 +38,7 @@ import com.cv.dao.ChangePasswordDao;
 	    	/*System.out.println("password changed at controller end.");
 	    	*/
 	    	session.invalidate();
+	    	MailSender.sendMail(verifiedemail, "Password Changed", "Your password has been Changed Successfully.");
 	    	pw.println("<center><h3><font color='green'>Password Changed Successfully.</font></h3></center>");
 	    	request.getRequestDispatcher("Login").include(request, response);
 	    	

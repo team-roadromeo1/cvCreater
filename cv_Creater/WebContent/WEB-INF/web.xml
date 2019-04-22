@@ -92,4 +92,20 @@
     <servlet-name>email_reset</servlet-name>
     <url-pattern>/email_reset</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>reset_info</servlet-name>
+    <jsp-file>/reset_info.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reset_info</servlet-name>
+    <url-pattern>/reset_info</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>update_info</servlet-name>
+    <jsp-file>/update_info.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>update_info</servlet-name>
+    <url-pattern>/update_info</url-pattern>
+  </servlet-mapping>
 </web-app>

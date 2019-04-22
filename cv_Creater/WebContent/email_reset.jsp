@@ -78,10 +78,9 @@ else{
 <div id="first">
 <h3>Reset your Email Address</h3>
 <form action="com.cv.services.ResetEmail" method="post" onSubmit="return Fun(this);">
-<input  placeholder="enter your old email address" title="email address" name="oldemail" class="email" type="email" required><br>
 <input  placeholder="enter your new email address" title="email address" name="newemail" id="new" class="email" type="email" required><br>
 <input  placeholder="confirm your email address" title="email address" name="confirmemail" id="con" class="email" type="email" required><br>
-<input class="b" type="submit" value="Send password reset email">
+<input class="b" type="submit" value="Reset Email">
 <br>
 <br>
 <center><a href="ServiceProfile">Back to profile</a></center>

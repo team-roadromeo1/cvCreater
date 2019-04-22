@@ -20,6 +20,38 @@
 
 
  <style>
+ 
+ 
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	
+}
+
+table td {
+    color:white;
+    font-size:20px;
+    font-style:italic;
+    width: 25%;
+	padding: 10px;
+	text-align: center;
+	
+}
+ 
+ table th{
+    text-align: center;
+      font-size: 20px;
+      font-style: italic;
+      color: white;
+ }
+
+table caption {
+	font-style: italic;
+}
+ 
+ 
+ 
 .navbar .navbar-nav {
     color:white;
     font-size: 18px;
@@ -448,28 +480,6 @@ else{
 
 
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-<div id="main">
-<!-- Create Div First For Login Form -->
-<div id="first">
-   <span class="close" title="close the tab">&times;</span>
-  <form action="com.cv.templates.temp1" method="post">
-  <br>
-  <br>
-  
-
-<center><input name="filename" placeholder="File Name"  class="txt" type="text" title="Save your cv with your desired name." required><br>
-<input  type="submit" class="b" value="Save">
-<br>
-<br>
-</center>
-</form>
-</div>
-  </div>
-     </div>
 
     <li class="nav-item">
       <a class="nav-link" href="#">Create</a>
@@ -500,7 +510,9 @@ else{
       
       
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="Edit_Profile">Edit Account info</a>
+        <a class="dropdown-item" href="password_reset">Change Password</a>
+        <a class="dropdown-item" href="email_reset">Change Email</a>
+        <a class="dropdown-item" href="com.cv.showrecord.Histroy_for_updation">Change Cv Info</a>
         <a class="dropdown-item" href="com.cv.services.ServiceLogout">Logout</a>
       </div>
     
@@ -554,7 +566,7 @@ else{
 <table>
 <tr>
 <td>
-<textarea cols="120" rows="10" name="address" class="ta" placeholder="Your Address*"  required></textarea>
+<textarea cols="60" rows="10" name="address" class="ta" placeholder="Your Address*"  required></textarea>
 </td>
 </tr>
 </table>
@@ -610,32 +622,10 @@ else{
 </select>
 </td>
 
-<td>
-
-</td>
-<td>
-
-</td>
 
 
 <td>
 <input type="text"  name="ssc" class="txtedu" placeholder="Your 10th percentage."  required>
-</td>
-
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
-
 </td>
 
 
@@ -684,33 +674,12 @@ else{
 </select>
 </td>
 
-<td>
-
-</td>
-<td>
-
-</td>
 
 
 <td>
 <input type="text" name="hsc" class="txtedu" placeholder="Your 12th percentage." required>
 </td>
 
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
-
-</td>
-<td>
-
-</td>
 
 
 <td>
@@ -762,23 +731,11 @@ else{
 </td>
 
 
-<td>
-
-</td>
-<td>
-
-</td>
-
 
 <td>
 <input type="text" name="dgree_per" class="txtedu" placeholder="Overall percentage(in %)."  required>
 </td>
 
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 
 
 <td>
