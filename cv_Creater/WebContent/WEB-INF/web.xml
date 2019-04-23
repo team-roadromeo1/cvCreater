@@ -108,15 +108,20 @@
     <servlet-name>update_info</servlet-name>
     <url-pattern>/update_info</url-pattern>
   </servlet-mapping>
-  
   <servlet>
-  <servlet-name>cv_preview</servlet-name>
-  <jsp-file>/cv_preview.jsp</jsp-file>
+    <servlet-name>cv_preview</servlet-name>
+    <jsp-file>/cv_preview.jsp</jsp-file>
   </servlet>
-  
   <servlet-mapping>
-  <servlet-name>cv_preview</servlet-name>
-  <url-pattern>/cv_preview</url-pattern>
+    <servlet-name>cv_preview</servlet-name>
+    <url-pattern>/cv_preview</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+  <servlet-name>cv_details</servlet-name>
+  <jsp-file>/cv_details.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>cv_details</servlet-name>
+  <url-pattern>/cv_details</url-pattern>
+  </servlet-mapping>
 </web-app>

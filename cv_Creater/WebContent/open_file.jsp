@@ -509,7 +509,7 @@ else{
 <th>Creation</th>
 </tr>
 <c:forEach items="${requestScope.record}" var="a">
-<form action="com.cv.templates.temp1" method="post">
+<form action="com.cv.info.Details" method="post">
 <input type="hidden" value="<c:out value='${a.time}'/>" name="time">
 <tr>
 <td><c:out value="${a.name}"/></td>

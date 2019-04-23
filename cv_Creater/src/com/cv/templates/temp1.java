@@ -29,11 +29,11 @@ public class temp1 extends HttpServlet {
 	PrintWriter pw=response.getWriter();
 	
 	HttpSession session=request.getSession(true);
-	String filename=request.getParameter("filename");
+	String filename=request.getParameter("name");
 	String id=(String)session.getAttribute("id");
 	String name=(String)session.getAttribute("name");
-	String time=request.getParameter("time");
-	String type=request.getParameter("type");
+	String time=(String)session.getAttribute("time");
+	
 	/*System.out.println("File types is: "+type);
 	System.out.println("Creation time is: "+time);
 	*/
@@ -52,7 +52,7 @@ public class temp1 extends HttpServlet {
 	}
 	else {
 	try {
-		if(filename==null) {
+		if(filename==null||filename.isEmpty()) {
 			filename="cv_Creater"+ResetPassword.generatePin();
 		}
 		
