@@ -169,8 +169,29 @@ public class InfoData {
 	@Column(name="creation_time")
 	private String time;
 	
+	@Column(name="updation_date")
+	private String updation_date;
 	
-    public String getTime() {
+	@Column(name="updation_time")
+	private String updation_time;
+	
+    public String getUpdation_date() {
+		return updation_date;
+	}
+
+	public void setUpdation_date(String updation_date) {
+		this.updation_date = updation_date;
+	}
+
+	public String getUpdation_time() {
+		return updation_time;
+	}
+
+	public void setUpdation_time(String updation_time) {
+		this.updation_time = updation_time;
+	}
+
+	public String getTime() {
 		return time;
 	}
 

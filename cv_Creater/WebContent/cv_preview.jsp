@@ -445,28 +445,6 @@ else{
 
 
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-<div id="main">
-<!-- Create Div First For Login Form -->
-<div id="first">
-   <span class="close" title="close the tab">&times;</span>
-  <form action="com.cv.templates.temp1" method="post">
-  <br>
-  <br>
-  
-
-<center><h3 style="color: black;">Type File Name</h3><br><input name="filename" placeholder="File Name"  class="txt" type="text" title="Save your cv with your desired name." required><br>
-<input  type="submit" class="b" value="Save">
-<br>
-<br>
-</center>
-</form>
-</div>
-  </div>
-     </div>
 
     <li class="nav-item">
       <a class="nav-link" href="Information">Create</a>
@@ -499,8 +477,8 @@ else{
       <div class="dropdown-menu">
         <a class="dropdown-item" href="password_reset">Change Password</a>
         <a class="dropdown-item" href="email_reset">Change Email</a>
-        <a class="dropdown-item" href="#">Change Cv Info</a>
-        <a class="dropdown-item" href="cv_preview">Cv Preview</a>
+        <a class="dropdown-item" href="com.cv.showrecord.Histroy_for_updation">Change Cv Info</a>
+        <a class="dropdown-item" href="#">Cv Preview</a>
         <a class="dropdown-item" href="com.cv.services.ServiceLogout">Logout</a>
       </div>
     
@@ -512,90 +490,12 @@ else{
   
 </nav>
 
-
-
-<div class="container-fluid" style="margin-top:80px">
-<center><h3>History
-</h3>
 <br>
 <br>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+<br>
+<br>
 
-<c:if test="${not empty requestScope.record}" var="b">
-<table> <!--  border="1px" bordercolor="black" style="text-align: center;" -->
-<tr>
-<th>Name</th>
-<th>Contact</th>
-<th>Updation Date</th>
-<th>Updation Time</th>
-<th>Creation</th>
-</tr>
-<c:forEach items="${requestScope.record}" var="a">
-<form action="com.cv.info.ResetInfoSer" method="post">
-<input type="hidden" value="<c:out value='${a.time}'/>" name="time">
-<tr>
-<td><c:out value="${a.name}"/></td>
-<td><c:out value="${a.phone}"/></td>
-<td><c:out value="${a.updation_date}"/></td>
-<td><c:out value="${a.updation_time}"/></td>
-<td><input type="submit" class="b" value="Update Info"></td>
-</tr>
-</form>
-</c:forEach>
-</table>
-</c:if>
-</center>
-</div>
-
-	<c:if test="${ empty requestScope.record}" var="b">
-<center><div class="h2"><img alt="No Data Found" src="img/Empty.png" height="400px" width="800px"></div></center>
-</c:if>
-	
-
-
-
-
-
-<SCRIPT type="text/javascript">
-window.history.forward();
-function noBack() { window.history.forward(); }
-
-
-
-//Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-
-$("#folderName").change(function() {
-        var sourceVal = document.getElementById("folderName").files[0].path;
-        $("#sourceDirPath").val(sourceVal);
-    });
-
-
-</SCRIPT>
+<center><iframe width="560" height="315" src="E:/preview.pdf" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 </body>
 </html>

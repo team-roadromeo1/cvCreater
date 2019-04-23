@@ -62,8 +62,8 @@ background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
 
 .content {
   padding: 0 18px;
-  display: none;
-  overflow: hidden;
+  display: block;
+  /* overflow: hidden; */
   background-color: #333;
 }
 
@@ -84,7 +84,7 @@ background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
 color:white;
 }
 
-.button {
+.div {
     background:none!important;
      border:none; 
      padding:0!important;
@@ -96,7 +96,7 @@ color:white;
      cursor:pointer;
 }
 
-.button:hover {
+.div:hover {
 	text-decoration: underline;
 	color: #069;
 }
@@ -127,7 +127,7 @@ color:white;
   width: 80%;
 }
 
-/* The Close Button */
+/* The Close div */
 .close {
   color: #aaaaaa;
 ;
@@ -143,18 +143,21 @@ color:white;
   cursor: pointer;
 }
     
-     .btn{
- background-color:grey;
- border-radius:5px;
- border-color:white;
- height:35px;
- width:100px;
- font-style:color="white";
+  .btn{
+  background:linear-gradient(to bottom,#22abe9 5%,#36caf0 100%);
+  box-shadow:inset 0 1px 0 0 #7bdcf4;
+  border-radius:5px;
+  border-color:white;
+  background-color:#333;
+  height:35px;
+  width:100px;
+  font-style:color="white";
  }
  
  .btn:hover{
- background-color:#4CAF50;
+background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
  }
+ 
 
 .b{
 background:linear-gradient(to bottom,#22abe9 5%,#36caf0 100%);
@@ -180,6 +183,10 @@ text-shadow:0 1px 0 #13506D
  font-size: 15px;
  }
 
+.sel{
+border-radius: 15px;
+height: 50px;
+}
 
 body{
 background-color:F1F1F1;
@@ -479,6 +486,7 @@ else{
         <a class="dropdown-item" href="password_reset">Change Password</a>
         <a class="dropdown-item" href="email_reset">Change Email</a>
         <a class="dropdown-item" href="com.cv.showrecord.Histroy_for_updation">Change Cv info</a>
+        <a class="dropdown-item" href="cv_preview">Cv Preview</a>
         <a class="dropdown-item" href="com.cv.services.ServiceLogout">Logout</a>
       </div>
     
@@ -496,15 +504,18 @@ else{
 
 
 <div class="container-fluid" style="margin-top:80px">
+
+<% out.println("<center><h3>Please fill the information below to update your cv information "+name+".</h3></center>"); %>
+
+
 <br>
 <br>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <c:if test="${not empty requestScope.record}" var="b">
 <c:forEach items="${requestScope.record}" var="a">
-
-<form action="#" method="post">
-<button class="collapsible">Personal Information</button>
+ <form action="com.cv.updation.Info_Updation" method="post">
 <!-- Personal Information  -->
+<div class="collapsible">Personal Information</div>
 <div class="content">
 <input type="hidden" value="<c:out value='${a.time}'/>" name="time" >
 
@@ -520,7 +531,7 @@ else{
 <tr>
 <td>Email</td>
 <td>
-<input type="email" name="email" class="txt" placeholder="Your Email." value="<c:out value='${a.email}'/>"  required>
+<input type="email" name="email" class="txt" placeholder="Your Email.">
 </td>
 
 
@@ -528,7 +539,7 @@ else{
 <tr>
 <td>Contact</td>
 <td>
-<input type="text" name="no" class="txt" placeholder="Your Contact no." pattern="[0-9]{10}" value="<c:out value='${a.phone}'/>" required>
+<input type="text" name="no" class="txt" placeholder="Your Contact no." pattern="[0-9]{10}">
 </td>
 </tr>
 
@@ -537,7 +548,7 @@ else{
 <tr>
 <td>Address</td>
 <td>
-<textarea cols="60" rows="10" name="address"  placeholder="Your Address*"  required><c:out value='${a.address}'/></textarea>
+<textarea cols="60" rows="10" name="address"  placeholder="Your Address*" ></textarea>
 </td>
 </tr>
 </table>
@@ -548,7 +559,7 @@ else{
 <br>
 
 
-<button class="collapsible">Educational Information</button>
+<div class="collapsible">Educational Information</div>
 <!-- Educational Information  -->
 <div class="content">
 <table>
@@ -561,19 +572,19 @@ else{
 <tr>
 <td>10th</td>
 <td>
-<input type="text" name="edu1" class="txtedu" placeholder="Year of passing" value="<c:out value='${a.ssc}'/>"  required>
+<input type="text" name="edu1" class="txt" placeholder="Year of passing"    >
 </td>
 
 
 
 <td>
-<input type="text"  name="ssc" class="txtedu" placeholder="Your 10th percentage." value="<c:out value='${a.ssc_per}'/>"  required>
+<input type="text"  name="ssc" class="txt" placeholder="Your 10th percentage."   >
 </td>
 
 
 
 <td>
-<input type="text" name="ssc_ins" class="txtedu" placeholder="Name of the Institute." value="<c:out value='${a.ssc_ins}'/>"  required>
+<input type="text" name="ssc_ins" class="txt" placeholder="Name of the Institute."    >
 </td>
 
 </tr>
@@ -583,19 +594,19 @@ else{
 <tr>
 <td>12th</td>
 <td>
-<input type="text" name="edu2" class="txtedu" placeholder="Year of passing" value="<c:out value='${a.hsc}'/>"  required>
+<input type="text" name="edu2" class="txt" placeholder="Year of passing"    >
 </td>
 
 
 
 <td>
-<input type="text" name="hsc" class="txtedu" placeholder="Your 12th percentage." value="<c:out value='${a.hsc_per}'/>" required>
+<input type="text" name="hsc" class="txt" placeholder="Your 12th percentage."   >
 </td>
 
 
 
 <td>
-<input type="text" name="hsc_ins" class="txtedu" placeholder="Name of the Institute." value="<c:out value='${a.hsc_ins}'/>" required>
+<input type="text" name="hsc_ins" class="txt" placeholder="Name of the Institute."   >
 </td>
 
 </tr>
@@ -605,23 +616,28 @@ else{
 <table>
 <tr>
 <td>
-<input type="text" name="dgree_name" class="txtedu" placeholder="Dgree Name" value="<c:out value='${a.dgree_name}'/>"  required>
+<select name="dgree_name" class="sel"  >
+<option>BE</option>
+<option>MBA</option>
+<option>Others</option>
+
+</select>
 </td>
 <td>
-<input type="text" name="edu3" class="txtedu" placeholder="Year of passing" value="<c:out value='${a.dgree}'/>"  required>
-</td>
-
-
-
-
-<td>
-<input type="text" name="dgree_per" class="txtedu" placeholder="Overall percentage(in %)." value="<c:out value='${a.dgree_per}'/>"  required>
+<input type="text" name="edu3" class="txt" placeholder="Year of passing"    >
 </td>
 
 
 
+
 <td>
-<input type="text" name="dgree_ins" class="txtedu" placeholder="Name of the institute." value="<c:out value='${a.dgree_ins}'/>"  required>
+<input type="text" name="dgree_per" class="txt" placeholder="Overall percentage(in %)."    >
+</td>
+
+
+
+<td>
+<input type="text" name="dgree_ins" class="txt" placeholder="Name of the institute."    >
 </td>
 
 
@@ -634,18 +650,365 @@ else{
 <br>
 </div>
 
-<button class="collapsible">Objective</button>
+<br>
+<br>
+
+
+<div class="collapsible">Objective</div>
 <!--Objective  -->
 <div class="content">
 <br>
-<textarea cols="120" rows="10" class="ta" name="obj" placeholder="Your Objective*"  required></textarea>
+<textarea cols="120" rows="10" class="ta" name="obj" placeholder="Your Objective*"   ></textarea>
 <br>
 </div>
 
+<br>
+<br>
+
+<div class="collapsible" title="Write your skills here">Your Skills</div>
+<!-- Skill  -->
+<div class="content">
+<table>
+
+<tr>
+<th>Skills</th>
+<th>Skills</th>
+</tr>
+
+<tr>
 
 
+<td>
+<input type="text" name="s1" class="txt" placeholder="Skill."   >
+</td>
 
-</form>
+<td>
+<input type="text" name="s2" class="txt" placeholder="Skill" >
+</td>
+
+
+</tr>
+
+<tr>
+
+
+<td>
+<input type="text" name="s3" class="txt" placeholder="Skill." >
+</td>
+
+<td>
+<input type="text" name="s4" class="txt" placeholder="Skill">
+</td>
+
+
+</tr>
+
+<tr>
+
+
+<td>
+<input type="text" name="s5" class="txt" placeholder="Skill." >
+</td>
+
+<td>
+<input type="text" name="s6" class="txt" placeholder="Skill">
+</td>
+
+
+</tr>
+
+<tr>
+
+
+<td>
+<input type="text" name="s7" class="txt" placeholder="Skill.">
+</td>
+
+
+<td>
+<input type="text" name="s8" class="txt" placeholder="Skill" >
+</td>
+
+
+</tr>
+
+<tr>
+
+
+<td>
+<input type="text" name="s9" class="txt" placeholder="Skill.">
+</td>
+
+
+<td>
+<input type="text" name="s10" class="txt"  placeholder="Skill">
+</td>
+
+
+</tr>
+
+
+</table>
+
+</div>
+
+
+<br>
+<br>
+
+<div class="collapsible" title="Write your project details here">Project Details</div>
+<!-- Projects  -->
+<div class="content">
+<div class="collapsible" title="Write your project details here( )">Project-1*</div>
+<!-- Project1  -->
+<div class="content">
+<table>
+<tr>
+<td>Project Name</td>
+<td>
+<input type="text" name="p1name" class="txt" placeholder="Project Name"   >
+</td>
+</tr>
+
+<tr>
+<td>Project Duration(in Months)</td>
+<td>
+<input type="text" name="p1time" class="txt" placeholder="Project Duration(in months)"   >
+</td>
+</tr>
+
+<tr>
+<td>About Project</td>
+<td>
+<textarea cols="120" rows="10" name="p1desc" class="ta" placeholder="About your project*"   ></textarea>
+</td>
+</tr>
+</table>
+</div>
+
+<div class="collapsible" title="Write your project details here">Project-2</div>
+<!-- Project2  -->
+<div class="content">
+<table>
+<tr>
+<td>Project Name</td>
+<td>
+<input type="text" name="p2name" class="txt" placeholder="Project Name" >
+</td>
+</tr>
+<tr>
+<td>Project Duration(in Months)</td>
+<td>
+<input type="text" name="p2time" class="txt"  placeholder="Project Duration(in months)">
+</td>
+</tr>
+<tr>
+<td>About Project</td>
+<td>
+<textarea cols="120" rows="10" name="p2desc" class="ta" placeholder="About your project*"></textarea>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<br>
+<br>
+
+<div class="collapsible" title="Write your project details here">Achievements</div>
+<!-- Achievements  -->
+<div class="content">
+
+<div class="collapsible" title="Write your achievements here( )">Achievement-1*</div>
+<!-- Achievement-1  -->
+<div class="content">
+<br>
+<textarea cols="120" rows="10" name="ach1" class="ta" placeholder="About your Achievement*"   ></textarea>
+<br>
+</div>
+
+<div class="collapsible" title="Write your achievements here">Achievement-2</div>
+<!-- Achievement-2  -->
+<div class="content">
+<br>
+<textarea cols="120" rows="10" name="ach2" class="ta" placeholder="About your Achievement"></textarea>
+<br>
+</div>
+
+<div class="collapsible" title="Write your achievements here">Achievement-3</div>
+<!-- Achievement-3  -->
+<div class="content">
+<br>
+<textarea cols="120" rows="10" name="ach3" class="ta" placeholder="About your Achievement"></textarea>
+<br>
+</div>
+
+<div class="collapsible" title="Write your achievements here">Achievement-4</div>
+<!-- Achievement-4  -->
+<div class="content">
+<br>
+<textarea cols="120" rows="10" name="ach4" class="ta" placeholder="About your Achievement"></textarea>
+<br>
+</div>
+
+<div class="collapsible" title="Write your achievements here">Achievement-5</div>
+<!-- Achievement-5  -->
+<div class="content">
+<br>
+<textarea cols="120" rows="10" name="ach5" class="ta" placeholder="About your Achievement"></textarea>
+<br>
+</div>
+
+</div>
+
+<br>
+<br>
+
+<div class="collapsible" title="Write your industrial training details here">Industrial exposure</div>
+<!-- Industrial exposure  -->
+<div class="content">
+<div class="collapsible" title="Write your industrial training details here( )">Training-1*</div>
+<!-- Industrial exposure  -->
+<div class="content">
+<br>
+<table>
+<tr>
+<td>Training Name</td>
+<td>
+<input type="text" name="t1name" class="txt" placeholder="Traning Name*"    >
+</td>
+</tr>
+
+<tr>
+<td>Training Institute</td>
+<td>
+<input type="text" name="t1_ins" class="txt" placeholder="Training Institution*"   >
+</td>
+</tr>
+
+<tr>
+<td>About Training</td>
+<td>
+<textarea cols="120" rows="10" name="t1desc" class="ta" placeholder="About your Training"  ></textarea>
+</td>
+</tr>
+</table>
+
+<br>
+</div>
+
+<div class="collapsible" title="Write your industrial training details here">Training-2</div>
+<!-- Industrial exposure  -->
+<div class="content">
+<br>
+<table>
+<tr>
+<td>Training Name</td>
+<td>
+<input type="text" name="t2name" class="txt" placeholder="Traning Name" >
+</td>
+</tr>
+<tr>
+<td>Training Institution</td>
+<td><input type="text" name="t2_ins" class="txt" placeholder="Training Institution" >
+</td>
+</tr>
+<tr>
+<td>About Training</td>
+<td>
+<textarea cols="120" rows="10" name="t2desc" class="ta" placeholder="About your Training" ></textarea>
+</td>
+</tr>
+</table>
+
+<br>
+</div>
+</div>
+
+<br>
+<br>
+
+<div class="collapsible" title="Hobbies">Hobbies</div>
+<!-- Hobbies  -->
+<div class="content">
+<table>
+<tr>
+<th>Hobbies</th>
+<th>Hobbies</th>
+</tr>
+
+<tr>
+<td>
+<input type="text" name="h1" class="txt" placeholder="Hobby" title="Your Hobbie."    >
+</td>
+
+
+<td>
+<input type="text" name="h2" class="txt"  placeholder="Hobby"  title="Your Hobbie.">
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="text" name="h3" class="txt" placeholder="Hobby"  title="Your Hobbie.">
+</td>
+
+
+<td>
+<input type="text" name="h4" class="txt"  placeholder="Hobby"  title="Your Hobbie.">
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="text" name="h5" class="txt"  placeholder="Hobby"  title="Your Hobbie.">
+</td>
+</tr>
+
+
+</table>
+
+</div>
+
+<br>
+<br>
+
+<div class="collapsible" title="verify your information">Declaration</div>
+<!-- Declaration  -->
+<div class="content">
+
+<h3><font color="white">I hereby declare that the above-mentioned information is correct up to my knowledge and I bear the responsibility
+for the correctness of the above-mentioned particulars.  </font></h3>
+
+<br>
+
+<table>
+<tr>
+<td>
+<input type="text" name="place" class="txt" placeholder="Place" title="Your place."    >
+</td>
+
+
+<td>
+<input type="text" name="decname" class="txt"  placeholder="Name" title="Your name."    >
+</td>
+</tr>
+</table>
+
+<br>
+
+</div>
+
+<br>
+<br>
+
+
+<center> <input type="submit" class="btn" value="Save">&nbsp<input type="reset" class="btn" value="Reset">
+</center>
+
+</form> 
 </c:forEach>
 </c:if>
 </div>
@@ -665,11 +1028,10 @@ else{
 
 
 
-
 <script>
 
 
-var coll = document.getElementsByClassName("collapsible");
+/* var coll = document.getElementsByClassName("collapsible");
 var i;
 
 for (i = 0; i < coll.length; i++) {
@@ -682,7 +1044,7 @@ for (i = 0; i < coll.length; i++) {
       content.style.display = "block";
     }
   });
-}
+} */
 
 
 </script>

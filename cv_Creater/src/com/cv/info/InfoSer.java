@@ -31,7 +31,7 @@ public class InfoSer extends HttpServlet {
          response.setContentType("text/html");
          PrintWriter pw=response.getWriter();
          
-         String name=request.getParameter("fname")+" "+request.getParameter("lname");
+         String name=request.getParameter("name");
          String email=request.getParameter("email");
          String number=request.getParameter("no");
          String address=request.getParameter("address");
@@ -142,6 +142,8 @@ public class InfoSer extends HttpServlet {
          data.setId(id);
          data.setDate(creation_date);
          data.setTime(creation_time);
+         data.setUpdation_date(creation_date);
+         data.setUpdation_time(creation_time);
          
          int i=InfoDao.register(data);
          
@@ -152,16 +154,19 @@ public class InfoSer extends HttpServlet {
  			    session.setAttribute("name",can_name);
  			    session.setAttribute("id", id);
  			    pw.println("<script type=\"text/javascript\">");
- 	  	        pw.println("alert('Your Cv Information is saved please click on save cv option to save your cv.');");
+ 	  	        pw.println("alert('Your Cv Information is saved please click on open tab  to make your cv.');");
  	  			pw.println("location='ServiceProfile';");
  	  			pw.println("</script>");
  	            
            }
-         else {
-        	System.out.println("Data is not Saved.");
+         else 
+         {  
+        	session.setAttribute("name",can_name);
+		    session.setAttribute("id", id);
+			System.out.println("Data is not Saved.");
         	pw.println("<script type=\"text/javascript\">");
-  	        pw.println("alert('Your Information is not saved please try again.');");
-  			pw.println("location='Information';");
+  	        pw.println("alert('Your Information is not saved please try after some time.');");
+  			pw.println("location='ServiceProfile';");
   			pw.println("</script>");
              
          }

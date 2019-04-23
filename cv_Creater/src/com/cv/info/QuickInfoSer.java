@@ -27,7 +27,7 @@ public class QuickInfoSer extends HttpServlet {
 	  response.setContentType("text/html");
 	  PrintWriter pw=response.getWriter();
 	  
-      String name=request.getParameter("fname")+" "+request.getParameter("lname");
+      String name=request.getParameter("name");;
       String email=request.getParameter("email");
       String number=request.getParameter("no");
       String address=request.getParameter("address");

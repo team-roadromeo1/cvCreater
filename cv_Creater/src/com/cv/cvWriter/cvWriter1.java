@@ -264,7 +264,7 @@ public class cvWriter1 {
 			proDetails.addCell(proDetailsSpace);
 			
 			Cell proDetailCell6=new Cell();
-			proDetailCell6.add(writerData.getP1time());
+			proDetailCell6.add(writerData.getP1time()+" Month");
 			proDetailCell6.setFont(font1);
 			proDetailCell6.setFontSize(10);
 			proDetailCell6.setBorder(Border.NO_BORDER);
@@ -334,7 +334,7 @@ public class cvWriter1 {
 				proDetails.addCell(proDetailsSpace);
 				
 				Cell pro1DetailCell6=new Cell();
-				pro1DetailCell6.add(writerData.getP2time());
+				pro1DetailCell6.add(writerData.getP2time()+" Month");
 				pro1DetailCell6.setFont(font1);
 				pro1DetailCell6.setFontSize(10);
 				pro1DetailCell6.setBorder(Border.NO_BORDER);
@@ -522,7 +522,7 @@ public class cvWriter1 {
 					    doc.add(space0);
 				     	
 				int count1=0;
-				if(writerData.getT2name()!=null) {
+				if(!writerData.getT2name().isEmpty()) {
 					count1++;
 				}
 				

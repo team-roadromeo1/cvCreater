@@ -103,8 +103,7 @@ background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
 
 .content {
   padding: 0 18px;
-  display: none;
-  overflow: hidden;
+  display: block;
   background-color: #333;
 }
 .topnav {
@@ -174,21 +173,14 @@ background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
 
  
  .txt{
- width:250px;
- height:40px;
- padding:10px 8px;
- border-radius:15px;
- border-color:transparent;
- }
-
- .txtedu{
- width:350px;
- height:40px;
+  width:306px;
+ height:50px;
  padding:10px 8px;
  border-radius:15px;
  border-color:transparent;
  font-size: 15px;
- }
+}
+
 
 .test{
  width:150px;
@@ -232,12 +224,6 @@ width: 18px;
 background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
  }
 
-table {
-	width: 50%;
-	border-collapse: separate;
-	table-layout: fixed;
-	
-}
  </style> 
   
 </head>
@@ -513,6 +499,7 @@ else{
         <a class="dropdown-item" href="password_reset">Change Password</a>
         <a class="dropdown-item" href="email_reset">Change Email</a>
         <a class="dropdown-item" href="com.cv.showrecord.Histroy_for_updation">Change Cv Info</a>
+        <a class="dropdown-item" href="cv_preview">Cv Preview</a>
         <a class="dropdown-item" href="com.cv.services.ServiceLogout">Logout</a>
       </div>
     
@@ -537,34 +524,32 @@ else{
 
 <form method="post" action="com.cv.info.InfoSer">
 
-<button class="collapsible">Personal Information</button>
+<div class="collapsible">Personal Information</div>
 <!-- Personal Information  -->
 <div class="content">
 
 <table>
 <tr>
+<td>Name</td>
 <td>
-<input type="text" name="fname" class="txt" placeholder="First Name"  required>
-</td>
-<td>
-<input type="text" name="lname" class="txt" placeholder="Last Name"  required>
+<input type="text" name="name" class="txt" placeholder="First Name"  required>
 </td>
 </tr>
 
 <tr>
-
+<td>Email</td>
 <td>
 <input type="email" name="email" class="txt" placeholder="Your Email."  required>
 </td>
-
+</tr>
+<tr>
+<td>Contact Number</td>
 <td>
 <input type="text" name="no" class="txt" placeholder="Your Contact no." pattern="[0-9]{10}"  required>
 </td>
-
 </tr>
-</table>
-<table>
 <tr>
+<td>Address</td>
 <td>
 <textarea cols="60" rows="10" name="address" class="ta" placeholder="Your Address*"  required></textarea>
 </td>
@@ -577,18 +562,25 @@ else{
 
 <br>
 <br>
-<br>
 
 
-<button class="collapsible">Educational Information</button>
+<div class="collapsible">Educational Information</div>
 <!-- Educational Information  -->
 <div class="content">
 <table>
 <tr>
+<th>Course</th>
+<th>Year of Passing</th>
+<th>Percentage</th>
+<th>Institute</th>
+</tr>
+
+<tr>
+<td>10th</td>
+
 <td>
 
 <select name="edu1" class="sel" required>
-<option>Year of passing</option>
 <option>Pursuing</option>
 <option>1990</option>
 <option>1991</option>
@@ -625,22 +617,21 @@ else{
 
 
 <td>
-<input type="text"  name="ssc" class="txtedu" placeholder="Your 10th percentage."  required>
+<input type="text"  name="ssc" class="txt" placeholder="Your 10th percentage."  required>
 </td>
 
 
 <td>
-<input type="text" name="ssc_ins" class="txtedu" placeholder="Name of the Institute."  required>
+<input type="text" name="ssc_ins" class="txt" placeholder="Name of the Institute."  required>
 </td>
 
 </tr>
-</table>
 
-<table>
+
 <tr>
+<td>12th</td>
 <td>
 <select name="edu2" class="sel" required>
-<option>Year of passing</option>
 <option>Pursuing</option>
 <option>1990</option>
 <option>1991</option>
@@ -677,25 +668,27 @@ else{
 
 
 <td>
-<input type="text" name="hsc" class="txtedu" placeholder="Your 12th percentage." required>
+<input type="text" name="hsc" class="txt" placeholder="Your 12th percentage." required>
 </td>
 
 
 
 <td>
-<input type="text" name="hsc_ins" class="txtedu" placeholder="Name of the Institute." required>
+<input type="text" name="hsc_ins" class="txt" placeholder="Name of the Institute." required>
 </td>
 
 </tr>
-</table>
 
-
-<table>
 <tr>
-
+<td><select name="dgree_name" class="sel" required>
+<option>Other</option>
+<option>BE</option>
+<option>BSC</option>
+<option>B.Com</option>
+</select>
+</td>
 <td>
 <select name="edu3" class="sel" required>
-<option>Year of passing</option>
 <option>Pursuing</option>
 <option>Not Done</option>
 <option>1990</option>
@@ -733,27 +726,15 @@ else{
 
 
 <td>
-<input type="text" name="dgree_per" class="txtedu" placeholder="Overall percentage(in %)."  required>
+<input type="text" name="dgree_per" class="txt" placeholder="Overall percentage(in %)."  required>
 </td>
 
 
 
 <td>
-<input type="text" name="dgree_ins" class="txtedu" placeholder="Name of the institute."  required>
+<input type="text" name="dgree_ins" class="txt" placeholder="Name of the institute."  required>
 </td>
 
-
-</tr>
-<tr>
-
-<td>
-<select name="dgree_name" class="sel" required>
-<option>BE</option>
-<option>BSC</option>
-<option>B.Com</option>
-<option>Other</option>
-</select>
-</td>
 
 </tr>
 
@@ -768,7 +749,7 @@ else{
 
 
 
-<button class="collapsible">Objective</button>
+<div class="collapsible">Objective</div>
 <!--Objective  -->
 <div class="content">
 <br>
@@ -782,24 +763,27 @@ else{
 <br>
 
 
-<button class="collapsible" title="Write your skills here">Your Skills</button>
+<div class="collapsible" title="Write your skills here">Your Skills</div>
 <!-- Skill  -->
 <div class="content">
 
 <table>
 <tr>
+<th>Skills</th>
+<th>Skills</th>
+
+</tr>
+
+<tr>
 
 
 <td>
-<input type="text" name="s1" class="txtedu" placeholder="Skill."  required>
+<input type="text" name="s1" class="txt" placeholder="Skill."  required>
 </td>
 
-<td> </td>
-<td> </td>
-<td> </td>
 
 <td>
-<input type="text" name="s2" class="txtedu" placeholder="Skill" >
+<input type="text" name="s2" class="txt" placeholder="Skill" >
 </td>
 
 
@@ -809,15 +793,12 @@ else{
 
 
 <td>
-<input type="text" name="s3" class="txtedu" placeholder="Skill.">
+<input type="text" name="s3" class="txt" placeholder="Skill.">
 </td>
 
-<td> </td>
-<td> </td>
-<td> </td>
 
 <td>
-<input type="text" name="s4" class="txtedu" placeholder="Skill" >
+<input type="text" name="s4" class="txt" placeholder="Skill" >
 </td>
 
 
@@ -827,15 +808,12 @@ else{
 
 
 <td>
-<input type="text" name="s5" class="txtedu" placeholder="Skill.">
+<input type="text" name="s5" class="txt" placeholder="Skill.">
 </td>
 
-<td> </td>
-<td> </td>
-<td> </td>
 
 <td>
-<input type="text" name="s6" class="txtedu" placeholder="Skill" >
+<input type="text" name="s6" class="txt" placeholder="Skill" >
 </td>
 
 
@@ -845,15 +823,12 @@ else{
 
 
 <td>
-<input type="text" name="s7" class="txtedu" placeholder="Skill.">
+<input type="text" name="s7" class="txt" placeholder="Skill.">
 </td>
 
-<td> </td>
-<td> </td>
-<td> </td>
 
 <td>
-<input type="text" name="s8" class="txtedu" placeholder="Skill" >
+<input type="text" name="s8" class="txt" placeholder="Skill" >
 </td>
 
 
@@ -863,15 +838,12 @@ else{
 
 
 <td>
-<input type="text" name="s9" class="txtedu" placeholder="Skill.">
+<input type="text" name="s9" class="txt" placeholder="Skill.">
 </td>
 
-<td> </td>
-<td> </td>
-<td> </td>
 
 <td>
-<input type="text" name="s10" class="txtedu"  placeholder="Skill" >
+<input type="text" name="s10" class="txt"  placeholder="Skill" >
 </td>
 
 
@@ -887,29 +859,34 @@ else{
 <br>
 <br>
 
-<button class="collapsible" title="Write your project details here">Project Details</button>
+<div class="collapsible" title="Write your project details here">Project Details</div>
 <!-- Projects  -->
 <div class="content">
 
-<button class="collapsible" title="Write your project details here( )">Project-1*</button>
+<div class="collapsible" title="Write your project details here( )">Project-1*</div>
 <!-- Project1  -->
 <div class="content">
 
 <table>
+
 <tr>
+<td>Project Name</td>
 <td>
 <input type="text" name="p1name" class="txt" placeholder="Project Name"  required>
 </td>
+</tr>
+<tr>
+<td>Project Duration</td>
 <td>
 <input type="text" name="p1time" class="txt" placeholder="Project Duration(in months)"  required>
 </td>
 </tr>
 
-</table>
-<table>
+
 <tr>
+<td>About Project</td>
 <td>
-<textarea cols="120" rows="10" name="p1desc" class="ta" placeholder="About your project*"  required></textarea>
+<textarea cols="60" rows="10" name="p1desc" class="ta" placeholder="About your project*"  required></textarea>
 </td>
 </tr>
 </table>
@@ -917,24 +894,27 @@ else{
 </div>
 
 
-<button class="collapsible" title="Write your project details here">Project-2</button>
+<div class="collapsible" title="Write your project details here">Project-2</div>
 <!-- Project2  -->
 <div class="content">
 <table>
 <tr>
+<td>Project Name</td>
 <td>
 <input type="text" name="p2name" class="txt" placeholder="Project Name"  >
 </td>
+</tr>
+<tr>
+<td>Project Duration</td>
 <td>
 <input type="text" name="p2time" class="txt" placeholder="Project Duration(in months)"  >
 </td>
 </tr>
 
-</table>
-<table>
 <tr>
+<td>About Project</td>
 <td>
-<textarea cols="120" rows="10" name="p2desc" class="ta" placeholder="About your project*"  ></textarea>
+<textarea cols="60" rows="10" name="p2desc" class="ta" placeholder="About your project*"  ></textarea>
 </td>
 </tr>
 </table>
@@ -948,11 +928,11 @@ else{
 <br>
 <br>
 
-<button class="collapsible" title="Write your project details here">Achievements</button>
+<div class="collapsible" title="Write your project details here">Achievements</div>
 <!-- Achievements  -->
 <div class="content">
 
-<button class="collapsible" title="Write your achievements here( )">Achievement-1*</button>
+<div class="collapsible" title="Write your achievements here( )">Achievement-1*</div>
 <!-- Achievement-1  -->
 <div class="content">
 <br>
@@ -960,7 +940,7 @@ else{
 <br>
 </div>
 
-<button class="collapsible" title="Write your achievements here">Achievement-2</button>
+<div class="collapsible" title="Write your achievements here">Achievement-2</div>
 <!-- Achievement-2  -->
 <div class="content">
 <br>
@@ -968,7 +948,7 @@ else{
 <br>
 </div>
 
-<button class="collapsible" title="Write your achievements here">Achievement-3</button>
+<div class="collapsible" title="Write your achievements here">Achievement-3</div>
 <!-- Achievement-3  -->
 <div class="content">
 <br>
@@ -976,7 +956,7 @@ else{
 <br>
 </div>
 
-<button class="collapsible" title="Write your achievements here">Achievement-4</button>
+<div class="collapsible" title="Write your achievements here">Achievement-4</div>
 <!-- Achievement-4  -->
 <div class="content">
 <br>
@@ -984,7 +964,7 @@ else{
 <br>
 </div>
 
-<button class="collapsible" title="Write your achievements here">Achievement-5</button>
+<div class="collapsible" title="Write your achievements here">Achievement-5</div>
 <!-- Achievement-5  -->
 <div class="content">
 <br>
@@ -998,28 +978,31 @@ else{
 <br>
 <br>
 
-<button class="collapsible" title="Write your industrial training details here">Industrial exposure</button>
+<div class="collapsible" title="Write your industrial training details here">Industrial exposure</div>
 <!-- Industrial exposure  -->
 <div class="content">
-<button class="collapsible" title="Write your industrial training details here( )">Training-1*</button>
+<div class="collapsible" title="Write your industrial training details here( )">Training-1*</div>
 <!-- Industrial exposure  -->
 <div class="content">
 <br>
 <table>
 <tr>
+<td>Training Name</td>
 <td>
 <input type="text" name="t1name" class="txt" placeholder="Traning Name*"  required>
 </td>
+</tr>
+<tr>
+<td>Training Institute</td>
 <td>
 <input type="text" name="t1_ins" class="txt" placeholder="Training Institution*"  required>
 </td>
 </tr>
 
-</table>
-<table>
 <tr>
+<td>About Training</td>
 <td>
-<textarea cols="120" rows="10" name="t1desc" class="ta" placeholder="About your Training" required></textarea>
+<textarea cols="60" rows="10" name="t1desc" class="ta" placeholder="About your Training" required></textarea>
 </td>
 </tr>
 </table>
@@ -1027,25 +1010,28 @@ else{
 <br>
 </div>
 
-<button class="collapsible" title="Write your industrial training details here">Training-2</button>
+<div class="collapsible" title="Write your industrial training details here">Training-2</div>
 <!-- Industrial exposure  -->
 <div class="content">
 <br>
 <table>
 <tr>
+<td>Training Name</td>
 <td>
 <input type="text" name="t2name" class="txt" placeholder="Traning Name"  >
 </td>
+</tr>
+<tr>
+<td>Training Institute</td>
 <td>
 <input type="text" name="t2_ins" class="txt" placeholder="Training Institution"  >
 </td>
 </tr>
 
-</table>
-<table>
 <tr>
+<td>About Training</td>
 <td>
-<textarea cols="120" rows="10" name="t2desc" class="ta" placeholder="About your Training" ></textarea>
+<textarea cols="60" rows="10" name="t2desc" class="ta" placeholder="About your Training" ></textarea>
 </td>
 </tr>
 </table>
@@ -1060,41 +1046,38 @@ else{
 <br>
 
 
-<button class="collapsible" title="verify your information">Hobbies</button>
+<div class="collapsible" title="verify your information">Hobbies</div>
 <!-- Hobbies  -->
 <div class="content">
 <table>
 <tr>
+<th>Hobbies</th>
+<th>Hobbies</th>
+</tr>
+<tr>
 <td>
-<input type="text" name="h1" class="txtedu" placeholder="Hobby" title="Your Hobbie."  required>
+<input type="text" name="h1" class="txt" placeholder="Hobby" title="Your Hobbie."  required>
 </td>
 
-<td> </td>
-<td> </td>
-<td> </td>
 
 <td>
-<input type="text" name="h2" class="txtedu"  placeholder="Hobby" title="Your Hobbie.">
+<input type="text" name="h2" class="txt"  placeholder="Hobby" title="Your Hobbie.">
 </td>
 </tr>
 
 <tr>
 <td>
-<input type="text" name="h3" class="txtedu" placeholder="Hobby" title="Your Hobbie.">
+<input type="text" name="h3" class="txt" placeholder="Hobby" title="Your Hobbie.">
 </td>
 
-<td> </td>
-<td> </td>
-<td> </td>
-
 <td>
-<input type="text" name="h4" class="txtedu"  placeholder="Hobby" title="Your Hobbie.">
+<input type="text" name="h4" class="txt"  placeholder="Hobby" title="Your Hobbie.">
 </td>
 </tr>
 
 <tr>
 <td>
-<input type="text" name="h5" class="txtedu"  placeholder="Hobby" title="Your Hobbie.">
+<input type="text" name="h5" class="txt"  placeholder="Hobby" title="Your Hobbie.">
 </td>
 </tr>
 
@@ -1108,7 +1091,7 @@ else{
 <br>
 
 
-<button class="collapsible" title="verify your information">Declaration</button>
+<div class="collapsible" title="verify your information">Declaration</div>
 <!-- Declaration  -->
 <div class="content">
 
@@ -1120,15 +1103,12 @@ for the correctness of the above-mentioned particulars.  </font></h3>
 <table>
 <tr>
 <td>
-<input type="text" name="place" class="txtedu" placeholder="Place" title="Your place."  required>
+<input type="text" name="place" class="txt" placeholder="Place" title="Your place."  required>
 </td>
 
-<td> </td>
-<td> </td>
-<td> </td>
 
 <td>
-<input type="text" name="decname" class="txtedu"  placeholder="Name" title="Your name."  required>
+<input type="text" name="decname" class="txt"  placeholder="Name" title="Your name."  required>
 </td>
 </tr>
 </table>
@@ -1150,7 +1130,7 @@ for the correctness of the above-mentioned particulars.  </font></h3>
 </div>
 
 <script type="text/javascript">
-var coll = document.getElementsByClassName("collapsible");
+/* var coll = document.getElementsByClassName("collapsible");
 var i;
 
 for (i = 0; i < coll.length; i++) {
@@ -1163,7 +1143,7 @@ for (i = 0; i < coll.length; i++) {
       content.style.display = "block";
     }
   });
-}
+} */
 </script>
 
 </body>
