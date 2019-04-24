@@ -28,11 +28,11 @@ String email=(String)session.getAttribute("email");
 /* System.out.println("value of pin is: "+pin);
 System.out.println("value of email is: "+email);
  */
-if(pin==null&&email==null){
+if(pin==null||email==null){
 	System.out.print("Attempt of Unauthenticated Access failed.");
 	out.println("<script type=\"text/javascript\">");
 	out.println("alert('You have no access to this page directly.');");
-	out.println("location='password_reset';");
+	out.println("location='Login';");
 	out.println("</script>");
 	
 }

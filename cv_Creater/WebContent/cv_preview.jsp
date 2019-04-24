@@ -15,6 +15,37 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="js/showhide.js"></script>
 <style>
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+    border:1px solid black;	
+}
+
+table td {
+    
+    font-size:20px;
+    width: 25%;
+	padding: 10px;
+	text-align: center;
+    border:1px solid black;	
+     	
+}
+ 
+ table th{
+    text-align: center;
+    background-color:graytext;
+      font-size: 20px;
+      color: white;
+    border:1px solid black;	
+ }
+
+table caption {
+	font-style: italic;
+}
+
+
 .navbar .navbar-nav {
     color:white;
     font-size: 18px;
@@ -149,32 +180,7 @@ body{
 background-color:F1F1F1;
 }
 
-table {
-	border: 1px solid black;
-	outline-color: black;
-	table-layout: fixed;
-	width: 100%;
-	border-collapse: collapse;
-	
-}
 
-table td {
-	width: 50%;
-	border: 1px solid black;
-	padding: 10px;
-	text-align: center;
-	
-}
- 
- table th{
- text-align: center;
-	border: 1px solid black;
- 
- }
-
-table caption {
-	font-style: italic;
-}
 
 #first{
 width:340px;
@@ -190,6 +196,10 @@ margin-left:-180px;
 top:0
 }
 
+.heading{
+background-color:black;
+color: white;
+}
 
 </style>
 
@@ -209,10 +219,10 @@ response.setHeader("Pragma","no-cache");
 
 String name=(String)session.getAttribute("name");
 String id=(String)session.getAttribute("id");
-if(name==null&&id==null){
+if(name==null||id==null){
 	System.out.print("Attempt of Unauthenticated Access failed.");
 	out.println("<script type=\"text/javascript\">");
-	out.println("alert('You have to login first.');");
+	out.println("alert('You have to no access to this page directely.');");
 	out.println("location='Login';");
 	out.println("</script>");
 }
@@ -493,6 +503,168 @@ else{
 <br>
 <br>
 
+<div class="container-fluid" style="margin-top:80px">
 
+<div style="float: left;"><h3>User Name</h3></div>
+<br>
+<br>
+
+<div style="float:left;">
+Email: user email
+<br>
+Phone: user phone number
+<br>
+Address: user address
+<br>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<table>
+<tr><td class="heading"><font style="float: left;" face="Times New Roman">OBJECTIVE</font></td></tr>
+</table>
+
+
+<br>
+
+<font style="float:left;">User objective</font>
+
+<br>
+<br>
+
+<table>
+<tr><td class="heading"><font style="float: left;" face="Times New Roman">EDUCATIONAL DETAILS</font></td></tr>
+</table>
+<br>
+
+
+<table>
+<tr>
+<th>Dgree/Course</th>
+<th>Institution</th>
+<th>Year Of Passing</th>
+<th>Percentage/Grade</th>
+</tr>
+
+<tr>
+<td>10th</td>
+<td>Institute Name</td>
+<td>Year of Passing</td>
+<td>Percentage</td>
+</tr>
+
+<tr>
+<td>12th</td>
+<td>Institute Name</td>
+<td>Year of Passing</td>
+<td>Percentage</td>
+</tr>
+
+<tr>
+<td>Dgree</td>
+<td>Institute Name</td>
+<td>Year of Passing</td>
+<td>Percentage</td>
+</tr>
+</table>
+
+<br>
+<table>
+<tr><td class="heading"><font style="float: left;" face="Times New Roman">PROJECT DETAILS</font></td></tr>
+</table>
+<br>
+
+<font style="float: left;font-weight: bold;color: black;" size="4px" face="times new roman">Title : </font>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<font style="color: black; float: left;" size="4px"  face="times new roman"> Project Name</font><br>	
+
+<br>
+
+<font style="float: left;font-weight: bold;color: black;" size="4px" face="times new roman">Duration : </font>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<font style="color: black; float: left;" size="4px"  face="times new roman"> Project Duration(in months)</font><br>	
+
+<br>
+
+<font style="float: left;font-weight: bold;color: black;" size="4px" face="times new roman">Description : </font>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<font style="color: black; float: left;" size="4px"  face="times new roman"> Project Description</font><br>	
+
+<br>
+
+<table>
+<tr><td class="heading"><font style="float: left;" face="Times New Roman">SKILLS</font></td></tr>
+</table>
+<br>
+<ul style="float: left;color: black;">
+<li><font face="times new roman" size="4px">Skill-1</font></li>
+<li><font face="times new roman" size="4px">Skill-2</font></li>
+<li><font face="times new roman" size="4px">Skill-3</font></li>
+<li><font face="times new roman" size="4px">Skill-4</font></li>
+<li><font face="times new roman" size="4px">Skill-5</font></li>
+</ul>
+<br>
+
+<table>
+<tr><td class="heading"><font style="float: left;" face="Times New Roman">INDUSTRIAL EXPOSURE</font></td></tr>
+</table>
+<br>
+
+<font style="float: left;font-weight: bold;color: black;" size="4px" face="times new roman">Training : </font>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<font style="color: black; float: left;" size="4px"  face="times new roman"> Training Name</font><br>	
+
+<br>
+
+<font style="float: left;font-weight: bold;color: black;" size="4px" face="times new roman">Institute : </font>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<font style="color: black; float: left;" size="4px"  face="times new roman"> Training Institute </font><br>	
+
+<br>
+
+<font style="float: left;font-weight: bold;color: black;" size="4px" face="times new roman">Description : </font>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<font style="color: black; float: left;" size="4px"  face="times new roman"> Training Description</font><br>	
+
+<br>
+
+<table>
+<tr><td class="heading"><font style="float: left;" face="Times New Roman">ACHIEVEMENTS</font></td></tr>
+</table>
+<br>
+<ul style="float: left;color: black;">
+<li><font face="times new roman" size="4px">Achievement-1</font></li>
+<li><font face="times new roman" size="4px">Achievement-2</font></li>
+<li><font face="times new roman" size="4px">Achievement-3</font></li>
+<li><font face="times new roman" size="4px">Achievement-4</font></li>
+<li><font face="times new roman" size="4px">Achievement-5</font></li>
+</ul>
+<br>
+
+<table>
+<tr><td class="heading"><font style="float: left;" face="Times New Roman">HOBBIES</font></td></tr>
+</table>
+<br>
+<ul style="float: left;color: black;">
+<li><font face="times new roman" size="4px">Hobby-1</font></li>
+<li><font face="times new roman" size="4px">Hobby-2</font></li>
+<li><font face="times new roman" size="4px">Hobby-3</font></li>
+<li><font face="times new roman" size="4px">Hobby-4</font></li>
+<li><font face="times new roman" size="4px">Hobby-5</font></li>
+</ul>
+<br>
+
+<table>
+<tr><td class="heading"><font style="float: left;" face="Times New Roman">DECLARATION</font></td></tr>
+</table>
+<br>
+<font style="float:left;">I hereby declare that the above-mentioned information is correct up to my knowledge and I bear the responsibility for the
+correctness of the above-mentioned particulars.</font>
+<br>
+<br>
+
+<font style="float: left;font-weight: bold;color: black;" size="4px" face="times new roman">Place : User Place </font>
+<br>
+<br>
+
+<font style="float: left;font-weight: bold;color: black;" size="4px" face="times new roman">(Name)</font>
+</div>
 </body>
 </html>

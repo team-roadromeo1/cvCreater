@@ -7,7 +7,7 @@
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Information</title>
+<title>Dashboard</title>
 
   <link href="css/collapsible.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -20,6 +20,21 @@
 
 
  <style>
+
+.chk{
+height: 15px;
+width: 15px;
+}
+
+
+
+ .obj{
+ width: 1300px;
+ height: 60px;
+ border-radius: 15px;
+ font-size: 16px;
+ 
+ }
  
  
 table {
@@ -241,7 +256,7 @@ background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
 
 String name=(String)session.getAttribute("name");
 String id=(String)session.getAttribute("id");
-if(name==null&&id==null){
+if(name==null||id==null){
 	System.out.print("Attempt of Unauthenticated Access failed.");
 	out.println("<script type=\"text/javascript\">");
 	out.println("alert('You have to login first.');");
@@ -545,7 +560,7 @@ else{
 <tr>
 <td>Contact Number</td>
 <td>
-<input type="text" name="no" class="txt" placeholder="Your Contact no." pattern="[0-9]{10}"  required>
+<input type="text" name="no" class="txt" placeholder="Your Contact no." pattern="[0-9]{10}" maxlength="10" minlength="10" required>
 </td>
 </tr>
 <tr>
@@ -753,10 +768,42 @@ else{
 <!--Objective  -->
 <div class="content">
 <br>
-<textarea cols="120" rows="10" class="ta" name="obj" placeholder="Your Objective*"  required></textarea>
+<select name="obj" class="obj">
+<option>Get hold of a position that will give me the ability to relate my education to a growing industry. Look forward to
+working with a corporation that promotes superior products and services; and give me with the chance to meet and
+go beyond assigned goals</option>
+<option>Always looking for the opportunities where i can explore myself.</option>
+<option>Always i am prepared for new challenges and love to tackle it.</option>
+<option>To obtain a position where i can turn my ability and skills in company's profit and also that improve my
+performance as well.</option>
+<option>I want to excel in this field with hard work, perseverance, and dedication.</option>
+<option>I want a highly rewarding career where I can use my skills and knowledge to help the company and my co-workers be successful.</option>
+<option>I am seeking a company where I can use my experience and education to help the company meet and surpass its goals.</option>
+<option>To work in a highly competitive environment with a perfect challenge by contributing the best for     the growth of the organization while ensuring growth in personal career.</option>
+<option>To Be a Successful professional in a Globally Respected Company and to achieve the objectives of the company with Honesty and Fairness and to Continuously Upgrade My Knowledge and Skills.</option>
+<option>As a Beginner in the Industrial field, while making a  positive  contribution, I would like to build a career, making the best use of my analytical, creative and logical skills to perform the job efficiently.</option>
+<option>To achieve high career growth through a continuous learning process, keep myself dynamic, visionary and competitive with the changing scenario of the world and to contribute for the growth of organization.</option>
+<option>Looking for opportunities to build my carrier that would help me in achieving greater practical excellence in software industry, exceptional with hardworking nature along with good communication skill to explore the requirements and come up with innovative solution.</option>
+<option>To be able to utilize the knowledge already gained, in a responsible and proper manner resulting in a value add to the organization and to reach the apex of my career in the process.</option>
+<option>To be an achiever with Challenging assignment wherever I work to grow in an organization which believes in growing through its people.</option>
+<option>To work in a dynamic environment that enables me to utilize my Knowledge and learn new things, and to progress professionally and personally.</option>
+<option>To obtain an entry-level position within an organization that offers security and professional growth which requires strong analytical and technical skills.</option>
+<option>To work with a company this appreciates innovation so that I can enhance my knowledge and skills to give my best for the growth of the company.</option>
+<option>Seeking a position to utilize my skills and abilities in the Information Technology that  offers professional  growth while  being resourceful, innovative and flexible.</option>
+<option>To pursue a challenging career and be part of a progressive organization that gives scope to enhance my knowledge, skills and to reaches the pinnacle in the computing and research field with sheer determination, dedication and hard work.</option>
+<option>Looking for a challenging career which will demand the best of my professional ability in terms of technical and analytical skills, and helps me in enhancing my current skill and knowledge.</option>
+<option>Looking forward to work with an organization which provides me an ample opportunity to explore my Technical skills towards organizational goals and be an ultimate resource to the organization.</option>
+</select>
+
+
+<br>
+<br>
+<font color="white" style="float: left;">Custom Objective: <input type="checkbox" class="chk"  onclick="f2()" title="Click me for Custom Objective."></font><br><br>
+<textarea disabled="disabled" cols="158" rows="10" class="ta" id="customobj" name="customobj" placeholder="Your Custom Objective"></textarea>
+
+<br>
 <br>
 </div>
-
 
 <br>
 <br>
@@ -1095,9 +1142,27 @@ else{
 <!-- Declaration  -->
 <div class="content">
 
-<h3><font color="white">I hereby declare that the above-mentioned information is correct up to my knowledge and I bear the responsibility
-for the correctness of the above-mentioned particulars.  </font></h3>
+<label style="color: white;">Declaration</label>
+<select name="dec" class="obj">
+<option>I hereby declare that the above-mentioned information is correct up to my knowledge and I bear the responsibility
+for the correctness of the above-mentioned particulars.</option>
+<option>All the information mentioned in the resume are correct to the best of my knowledge and believe.</option>
+<option>I hereby declare that above-mentioned information is correct to the best of my knowledge and belief</option>
+<option>I solemnly declare that all the above furnished information is free from error to the best of my knowledge and belief.</option>
+<option>I hereby declare that all above-mentioned information is in accordance with fact or truth up to my knowledge and I bear the responsibilities for the correctness of the above mentioned particulars.</option>
+<option>I hereby declare that the information furnished above is true to the best of my knowledge.</option>
+<option>I do hereby declare that above particulars of information and facts stated are true, correct and complete to the best of my knowledge and belief.</option>
+<option>I hereby clarify that information provided above is true to my belief and knowledge.</option>
+<option>I do hereby declare that the above statements mentioned in my resume are true and correct to the best of my knowledge and belief.</option>
+<option>I hereby declare that the above furnished information is true to the best of my knowledge and that I will be held responsible for any deviation from them at a later stage.</option>
+</select>
 
+<br>
+<br>
+<font style="float: left;" color="white">Custom Declaration: <input type="checkbox" class="chk"  onclick="f1()" title="Click me for Custom Declaration."></font><br><br>
+<textarea disabled="disabled" cols="158" rows="10" class="ta" id="customdec" name="customdec" placeholder="Your Custom Declaration" ></textarea>
+
+<br>
 <br>
 
 <table>
@@ -1130,20 +1195,16 @@ for the correctness of the above-mentioned particulars.  </font></h3>
 </div>
 
 <script type="text/javascript">
-/* var coll = document.getElementsByClassName("collapsible");
-var i;
+function f1(){
+	var textArea = document.getElementById('customdec');
+    textArea.disabled = !textArea.disabled;
+}
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-} */
+function f2(){
+	var textArea = document.getElementById('customobj');
+    textArea.disabled = !textArea.disabled;
+}
+
 </script>
 
 </body>

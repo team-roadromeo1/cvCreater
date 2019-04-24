@@ -188,6 +188,15 @@ border-radius: 15px;
 height: 50px;
 }
 
+ .obj{
+ width: 1300px;
+ height: 60px;
+ border-radius: 15px;
+ font-size: 16px;
+ 
+ }
+
+
 body{
 background-color:F1F1F1;
 }
@@ -211,7 +220,7 @@ response.setHeader("Pragma","no-cache");
 
 String name=(String)session.getAttribute("name");
 String id=(String)session.getAttribute("id");
-if(name==null&&id==null){
+if(name==null||id==null){
 	System.out.print("Attempt of Unauthenticated Access failed.");
 	out.println("<script type=\"text/javascript\">");
 	out.println("alert('You have to login first.');");
@@ -531,7 +540,7 @@ else{
 <tr>
 <td>Email</td>
 <td>
-<input type="email" name="email" class="txt" placeholder="Your Email.">
+<input type="email" name="email" class="txt" placeholder="Your Email." value="<c:out value='${a.email}'/>">
 </td>
 
 
@@ -539,7 +548,7 @@ else{
 <tr>
 <td>Contact</td>
 <td>
-<input type="text" name="no" class="txt" placeholder="Your Contact no." pattern="[0-9]{10}">
+<input type="text" name="no" class="txt" placeholder="Your Contact no." pattern="[0-9]{10}" value="<c:out value='${a.phone}'/>" maxlength="10" minlength="10">
 </td>
 </tr>
 
@@ -548,7 +557,7 @@ else{
 <tr>
 <td>Address</td>
 <td>
-<textarea cols="60" rows="10" name="address"  placeholder="Your Address*" ></textarea>
+<textarea cols="60" rows="10" name="address"  placeholder="Your Address*" ><c:out value='${a.address}'/></textarea>
 </td>
 </tr>
 </table>
@@ -572,19 +581,19 @@ else{
 <tr>
 <td>10th</td>
 <td>
-<input type="text" name="edu1" class="txt" placeholder="Year of passing"    >
+<input type="text" name="edu1" class="txt" placeholder="Year of passing"  value="<c:out value='${a.ssc}'/>">
 </td>
 
 
 
 <td>
-<input type="text"  name="ssc" class="txt" placeholder="Your 10th percentage."   >
+<input type="text"  name="ssc" class="txt" placeholder="Your 10th percentage."  value="<c:out value='${a.ssc_per}'/>">
 </td>
 
 
 
 <td>
-<input type="text" name="ssc_ins" class="txt" placeholder="Name of the Institute."    >
+<input type="text" name="ssc_ins" class="txt" placeholder="Name of the Institute." value="<c:out value='${a.ssc_ins}'/>">
 </td>
 
 </tr>
@@ -594,19 +603,19 @@ else{
 <tr>
 <td>12th</td>
 <td>
-<input type="text" name="edu2" class="txt" placeholder="Year of passing"    >
+<input type="text" name="edu2" class="txt" placeholder="Year of passing"    value="<c:out value='${a.hsc}'/>">
 </td>
 
 
 
 <td>
-<input type="text" name="hsc" class="txt" placeholder="Your 12th percentage."   >
+<input type="text" name="hsc" class="txt" placeholder="Your 12th percentage."   value="<c:out value='${a.hsc_per}'/>">
 </td>
 
 
 
 <td>
-<input type="text" name="hsc_ins" class="txt" placeholder="Name of the Institute."   >
+<input type="text" name="hsc_ins" class="txt" placeholder="Name of the Institute."   value="<c:out value='${a.hsc_ins}'/>">
 </td>
 
 </tr>
@@ -616,28 +625,25 @@ else{
 <table>
 <tr>
 <td>
-<select name="dgree_name" class="sel"  >
-<option>BE</option>
-<option>MBA</option>
-<option>Others</option>
+<input type="text" name="dgree_name" class="txt" placeholder="Name of the Dgree."   value="<c:out value='${a.dgree_name}'/>">
 
 </select>
 </td>
 <td>
-<input type="text" name="edu3" class="txt" placeholder="Year of passing"    >
+<input type="text" name="edu3" class="txt" placeholder="Year of passing" value="<c:out value='${a.dgree}'/>">
 </td>
 
 
 
 
 <td>
-<input type="text" name="dgree_per" class="txt" placeholder="Overall percentage(in %)."    >
+<input type="text" name="dgree_per" class="txt" placeholder="Overall percentage(in %)."    value="<c:out value='${a.dgree_per}'/>">
 </td>
 
 
 
 <td>
-<input type="text" name="dgree_ins" class="txt" placeholder="Name of the institute."    >
+<input type="text" name="dgree_ins" class="txt" placeholder="Name of the institute."    value="<c:out value='${a.dgree_ins}'/>">
 </td>
 
 
@@ -657,8 +663,41 @@ else{
 <div class="collapsible">Objective</div>
 <!--Objective  -->
 <div class="content">
+<label style="color: white;">Objective</label>
+<select name="obj" class="obj">
+<option>Get hold of a position that will give me the ability to relate my education to a growing industry. Look forward to
+working with a corporation that promotes superior products and services; and give me with the chance to meet and
+go beyond assigned goals</option>
+<option>Always looking for the opportunities where i can explore myself.</option>
+<option>Always i am prepared for new challenges and love to tackle it.</option>
+<option>To obtain a position where i can turn my ability and skills in company's profit and also that improve my
+performance as well.</option>
+<option>I want to excel in this field with hard work, perseverance, and dedication.</option>
+<option>I want a highly rewarding career where I can use my skills and knowledge to help the company and my co-workers be successful.</option>
+<option>I am seeking a company where I can use my experience and education to help the company meet and surpass its goals.</option>
+<option>To work in a highly competitive environment with a perfect challenge by contributing the best for     the growth of the organization while ensuring growth in personal career.</option>
+<option>To Be a Successful professional in a Globally Respected Company and to achieve the objectives of the company with Honesty and Fairness and to Continuously Upgrade My Knowledge and Skills.</option>
+<option>As a Beginner in the Industrial field, while making a  positive  contribution, I would like to build a career, making the best use of my analytical, creative and logical skills to perform the job efficiently.</option>
+<option>To achieve high career growth through a continuous learning process, keep myself dynamic, visionary and competitive with the changing scenario of the world and to contribute for the growth of organization.</option>
+<option>Looking for opportunities to build my carrier that would help me in achieving greater practical excellence in software industry, exceptional with hardworking nature along with good communication skill to explore the requirements and come up with innovative solution.</option>
+<option>To be able to utilize the knowledge already gained, in a responsible and proper manner resulting in a value add to the organization and to reach the apex of my career in the process.</option>
+<option>To be an achiever with Challenging assignment wherever I work to grow in an organization which believes in growing through its people.</option>
+<option>To work in a dynamic environment that enables me to utilize my Knowledge and learn new things, and to progress professionally and personally.</option>
+<option>To obtain an entry-level position within an organization that offers security and professional growth which requires strong analytical and technical skills.</option>
+<option>To work with a company this appreciates innovation so that I can enhance my knowledge and skills to give my best for the growth of the company.</option>
+<option>Seeking a position to utilize my skills and abilities in the Information Technology that  offers professional  growth while  being resourceful, innovative and flexible.</option>
+<option>To pursue a challenging career and be part of a progressive organization that gives scope to enhance my knowledge, skills and to reaches the pinnacle in the computing and research field with sheer determination, dedication and hard work.</option>
+<option>Looking for a challenging career which will demand the best of my professional ability in terms of technical and analytical skills, and helps me in enhancing my current skill and knowledge.</option>
+<option>Looking forward to work with an organization which provides me an ample opportunity to explore my Technical skills towards organizational goals and be an ultimate resource to the organization.</option>
+</select>
+
 <br>
-<textarea cols="120" rows="10" class="ta" name="obj" placeholder="Your Objective*"   ></textarea>
+<br>
+<font style="float: left;" color="white">Custom Objective: <input type="checkbox" class="chk"  onclick="f2()" title="Click me for Custom Objective."></font><br><br>
+
+<textarea disabled="disabled" cols="175" rows="10" class="ta" name="customobj" id="customobj" placeholder="Your Custom Objective"></textarea>
+
+<br>
 <br>
 </div>
 
@@ -679,25 +718,11 @@ else{
 
 
 <td>
-<input type="text" name="s1" class="txt" placeholder="Skill."   >
+<input type="text" name="s1" class="txt" placeholder="Skill."   value="<c:out value='${a.s1}'/>">
 </td>
 
 <td>
-<input type="text" name="s2" class="txt" placeholder="Skill" >
-</td>
-
-
-</tr>
-
-<tr>
-
-
-<td>
-<input type="text" name="s3" class="txt" placeholder="Skill." >
-</td>
-
-<td>
-<input type="text" name="s4" class="txt" placeholder="Skill">
+<input type="text" name="s2" class="txt" placeholder="Skill"  value="<c:out value='${a.s2}'/>">
 </td>
 
 
@@ -707,26 +732,11 @@ else{
 
 
 <td>
-<input type="text" name="s5" class="txt" placeholder="Skill." >
+<input type="text" name="s3" class="txt" placeholder="Skill."  value="<c:out value='${a.s3}'/>">
 </td>
 
 <td>
-<input type="text" name="s6" class="txt" placeholder="Skill">
-</td>
-
-
-</tr>
-
-<tr>
-
-
-<td>
-<input type="text" name="s7" class="txt" placeholder="Skill.">
-</td>
-
-
-<td>
-<input type="text" name="s8" class="txt" placeholder="Skill" >
+<input type="text" name="s4" class="txt" placeholder="Skill"  value="<c:out value='${a.s4}'/>">
 </td>
 
 
@@ -736,12 +746,41 @@ else{
 
 
 <td>
-<input type="text" name="s9" class="txt" placeholder="Skill.">
+<input type="text" name="s5" class="txt" placeholder="Skill."  value="<c:out value='${a.s5}'/>">
+</td>
+
+<td>
+<input type="text" name="s6" class="txt" placeholder="Skill"  value="<c:out value='${a.s6}'/>">
+</td>
+
+
+</tr>
+
+<tr>
+
+
+<td>
+<input type="text" name="s7" class="txt" placeholder="Skill."  value="<c:out value='${a.s7}'/>">
 </td>
 
 
 <td>
-<input type="text" name="s10" class="txt"  placeholder="Skill">
+<input type="text" name="s8" class="txt" placeholder="Skill"  value="<c:out value='${a.s8}'/>">
+</td>
+
+
+</tr>
+
+<tr>
+
+
+<td>
+<input type="text" name="s9" class="txt" placeholder="Skill."  value="<c:out value='${a.s9}'/>">
+</td>
+
+
+<td>
+<input type="text" name="s10" class="txt"  placeholder="Skill"  value="<c:out value='${a.s10}'/>">
 </td>
 
 
@@ -766,21 +805,21 @@ else{
 <tr>
 <td>Project Name</td>
 <td>
-<input type="text" name="p1name" class="txt" placeholder="Project Name"   >
+<input type="text" name="p1name" class="txt" placeholder="Project Name"    value="<c:out value='${a.p1name}'/>">
 </td>
 </tr>
 
 <tr>
 <td>Project Duration(in Months)</td>
 <td>
-<input type="text" name="p1time" class="txt" placeholder="Project Duration(in months)"   >
+<input type="text" name="p1time" class="txt" placeholder="Project Duration(in months)"    value="<c:out value='${a.p1time}'/>">
 </td>
 </tr>
 
 <tr>
 <td>About Project</td>
 <td>
-<textarea cols="120" rows="10" name="p1desc" class="ta" placeholder="About your project*"   ></textarea>
+<textarea cols="120" rows="10" name="p1desc" class="ta" placeholder="About your project*"   ><c:out value='${a.p1desc}'/></textarea>
 </td>
 </tr>
 </table>
@@ -793,19 +832,19 @@ else{
 <tr>
 <td>Project Name</td>
 <td>
-<input type="text" name="p2name" class="txt" placeholder="Project Name" >
+<input type="text" name="p2name" class="txt" placeholder="Project Name"  value="<c:out value='${a.p2name}'/>">
 </td>
 </tr>
 <tr>
 <td>Project Duration(in Months)</td>
 <td>
-<input type="text" name="p2time" class="txt"  placeholder="Project Duration(in months)">
+<input type="text" name="p2time" class="txt"  placeholder="Project Duration(in months)"  value="<c:out value='${a.p2time}'/>">
 </td>
 </tr>
 <tr>
 <td>About Project</td>
 <td>
-<textarea cols="120" rows="10" name="p2desc" class="ta" placeholder="About your project*"></textarea>
+<textarea cols="120" rows="10" name="p2desc" class="ta" placeholder="About your project*"><c:out value='${a.p2desc}'/></textarea>
 </td>
 </tr>
 </table>
@@ -825,7 +864,7 @@ else{
 <!-- Achievement-1  -->
 <div class="content">
 <br>
-<textarea cols="120" rows="10" name="ach1" class="ta" placeholder="About your Achievement*"   ></textarea>
+<textarea cols="120" rows="10" name="ach1" class="ta" placeholder="About your Achievement*" ><c:out value='${a.ach1}'/></textarea>
 <br>
 </div>
 
@@ -833,7 +872,7 @@ else{
 <!-- Achievement-2  -->
 <div class="content">
 <br>
-<textarea cols="120" rows="10" name="ach2" class="ta" placeholder="About your Achievement"></textarea>
+<textarea cols="120" rows="10" name="ach2" class="ta" placeholder="About your Achievement"><c:out value='${a.ach2}'/></textarea>
 <br>
 </div>
 
@@ -841,7 +880,7 @@ else{
 <!-- Achievement-3  -->
 <div class="content">
 <br>
-<textarea cols="120" rows="10" name="ach3" class="ta" placeholder="About your Achievement"></textarea>
+<textarea cols="120" rows="10" name="ach3" class="ta" placeholder="About your Achievement"><c:out value='${a.ach3}'/></textarea>
 <br>
 </div>
 
@@ -849,7 +888,7 @@ else{
 <!-- Achievement-4  -->
 <div class="content">
 <br>
-<textarea cols="120" rows="10" name="ach4" class="ta" placeholder="About your Achievement"></textarea>
+<textarea cols="120" rows="10" name="ach4" class="ta" placeholder="About your Achievement"><c:out value='${a.ach4}'/></textarea>
 <br>
 </div>
 
@@ -857,7 +896,7 @@ else{
 <!-- Achievement-5  -->
 <div class="content">
 <br>
-<textarea cols="120" rows="10" name="ach5" class="ta" placeholder="About your Achievement"></textarea>
+<textarea cols="120" rows="10" name="ach5" class="ta" placeholder="About your Achievement"><c:out value='${a.ach5}'/></textarea>
 <br>
 </div>
 
@@ -877,21 +916,21 @@ else{
 <tr>
 <td>Training Name</td>
 <td>
-<input type="text" name="t1name" class="txt" placeholder="Traning Name*"    >
+<input type="text" name="t1name" class="txt" placeholder="Traning Name*" value="<c:out value='${a.t1name}'/>">
 </td>
 </tr>
 
 <tr>
 <td>Training Institute</td>
 <td>
-<input type="text" name="t1_ins" class="txt" placeholder="Training Institution*"   >
+<input type="text" name="t1_ins" class="txt" placeholder="Training Institution*"   value="<c:out value='${a.t1_ins}'/>">
 </td>
 </tr>
 
 <tr>
 <td>About Training</td>
 <td>
-<textarea cols="120" rows="10" name="t1desc" class="ta" placeholder="About your Training"  ></textarea>
+<textarea cols="120" rows="10" name="t1desc" class="ta" placeholder="About your Training"  ><c:out value='${a.t1desc}'/></textarea>
 </td>
 </tr>
 </table>
@@ -907,18 +946,18 @@ else{
 <tr>
 <td>Training Name</td>
 <td>
-<input type="text" name="t2name" class="txt" placeholder="Traning Name" >
+<input type="text" name="t2name" class="txt" placeholder="Traning Name" value="<c:out value='${a.t2name}'/>">
 </td>
 </tr>
 <tr>
 <td>Training Institution</td>
-<td><input type="text" name="t2_ins" class="txt" placeholder="Training Institution" >
+<td><input type="text" name="t2_ins" class="txt" placeholder="Training Institution" value="<c:out value='${a.t2_ins}'/>">
 </td>
 </tr>
 <tr>
 <td>About Training</td>
 <td>
-<textarea cols="120" rows="10" name="t2desc" class="ta" placeholder="About your Training" ></textarea>
+<textarea cols="120" rows="10" name="t2desc" class="ta" placeholder="About your Training" ><c:out value='${a.t2desc}'/></textarea>
 </td>
 </tr>
 </table>
@@ -941,29 +980,29 @@ else{
 
 <tr>
 <td>
-<input type="text" name="h1" class="txt" placeholder="Hobby" title="Your Hobbie."    >
+<input type="text" name="h1" class="txt" placeholder="Hobby" title="Your Hobbie."    value="<c:out value='${a.h1}'/>">
 </td>
 
 
 <td>
-<input type="text" name="h2" class="txt"  placeholder="Hobby"  title="Your Hobbie.">
-</td>
-</tr>
-
-<tr>
-<td>
-<input type="text" name="h3" class="txt" placeholder="Hobby"  title="Your Hobbie.">
-</td>
-
-
-<td>
-<input type="text" name="h4" class="txt"  placeholder="Hobby"  title="Your Hobbie.">
+<input type="text" name="h2" class="txt"  placeholder="Hobby"  title="Your Hobbie."  value="<c:out value='${a.h2}'/>">
 </td>
 </tr>
 
 <tr>
 <td>
-<input type="text" name="h5" class="txt"  placeholder="Hobby"  title="Your Hobbie.">
+<input type="text" name="h3" class="txt" placeholder="Hobby"  title="Your Hobbie."  value="<c:out value='${a.h3}'/>">
+</td>
+
+
+<td>
+<input type="text" name="h4" class="txt"  placeholder="Hobby"  title="Your Hobbie."  value="<c:out value='${a.h4}'/>">
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="text" name="h5" class="txt"  placeholder="Hobby"  title="Your Hobbie."  value="<c:out value='${a.h5}'/>">
 </td>
 </tr>
 
@@ -979,20 +1018,39 @@ else{
 <!-- Declaration  -->
 <div class="content">
 
-<h3><font color="white">I hereby declare that the above-mentioned information is correct up to my knowledge and I bear the responsibility
-for the correctness of the above-mentioned particulars.  </font></h3>
+<label style="color: white;">Declaration</label>
+<select name="dec" class="obj">
+<option>I hereby declare that the above-mentioned information is correct up to my knowledge and I bear the responsibility
+for the correctness of the above-mentioned particulars.</option>
+<option>All the information mentioned in the resume are correct to the best of my knowledge and believe.</option>
+<option>I hereby declare that above-mentioned information is correct to the best of my knowledge and belief</option>
+<option>I solemnly declare that all the above furnished information is free from error to the best of my knowledge and belief.</option>
+<option>I hereby declare that all above-mentioned information is in accordance with fact or truth up to my knowledge and I bear the responsibilities for the correctness of the above mentioned particulars.</option>
+<option>I hereby declare that the information furnished above is true to the best of my knowledge.</option>
+<option>I do hereby declare that above particulars of information and facts stated are true, correct and complete to the best of my knowledge and belief.</option>
+<option>I hereby clarify that information provided above is true to my belief and knowledge.</option>
+<option>I do hereby declare that the above statements mentioned in my resume are true and correct to the best of my knowledge and belief.</option>
+<option>I hereby declare that the above furnished information is true to the best of my knowledge and that I will be held responsible for any deviation from them at a later stage.</option>
+</select>
 
 <br>
+<br>
+<font style="float: left;" color="white">Custom Declaration: <input type="checkbox" class="chk"  onclick="f1()" title="Click me for Custom Declaration."></font><br><br>
+<textarea disabled="disabled" cols="158" rows="10" class="ta" name="customdec" id="customdec" placeholder="Your Custom Declaration" ></textarea>
+
+<br>
+<br>
+
 
 <table>
 <tr>
 <td>
-<input type="text" name="place" class="txt" placeholder="Place" title="Your place."    >
+<input type="text" name="place" class="txt" placeholder="Place" title="Your place." value="<c:out value='${a.place}'/>">
 </td>
 
 
 <td>
-<input type="text" name="decname" class="txt"  placeholder="Name" title="Your name."    >
+<input type="text" name="decname" class="txt"  placeholder="Name" title="Your name."  value="<c:out value='${a.decname}'/>">
 </td>
 </tr>
 </table>
@@ -1030,21 +1088,15 @@ for the correctness of the above-mentioned particulars.  </font></h3>
 
 <script>
 
+function f1(){
+	var textArea = document.getElementById('customdec');
+    textArea.disabled = !textArea.disabled;
+}
 
-/* var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-} */
+function f2(){
+	var textArea = document.getElementById('customobj');
+    textArea.disabled = !textArea.disabled;
+}
 
 
 </script>

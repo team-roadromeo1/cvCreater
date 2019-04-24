@@ -45,7 +45,12 @@ public class InfoSer extends HttpServlet {
          String dgree_per=request.getParameter("dgree_per");
          String dgree_ins=request.getParameter("dgree_ins");
          String dgree_name=request.getParameter("dgree_name");
-         String obj=request.getParameter("obj");
+         String obj=request.getParameter("customobj");
+         
+         if(obj==null) {
+        	 obj=request.getParameter("obj");
+         }
+         
          String s1=request.getParameter("s1");
          String s2=request.getParameter("s2");
          String s3=request.getParameter("s3");
@@ -75,6 +80,12 @@ public class InfoSer extends HttpServlet {
          String t2desc=request.getParameter("t2desc");
          String place=request.getParameter("place");
          String decname=request.getParameter("decname");
+         String dec=request.getParameter("customdec");
+         
+         if(dec==null) {
+        	 dec=request.getParameter("dec");
+         }
+         
          String h1=request.getParameter("h1");
          String h2=request.getParameter("h2");
          String h3=request.getParameter("h3");
@@ -134,6 +145,7 @@ public class InfoSer extends HttpServlet {
          data.setT2desc(t2desc);
          data.setPlace(place);
          data.setDecname(decname);
+         data.setDec(dec);
          data.setH1(h1);
          data.setH2(h2);
          data.setH3(h3);

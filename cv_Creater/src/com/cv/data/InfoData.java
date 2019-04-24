@@ -142,7 +142,9 @@ public class InfoData {
 	@Column(name="decname")
 	private String decname;
 	
-	
+	@Column(name="declaration")
+	private String dec;
+
 	@Column(name="h1")
 	private String h1;
 	
@@ -175,7 +177,16 @@ public class InfoData {
 	@Column(name="updation_time")
 	private String updation_time;
 	
-    public String getUpdation_date() {
+
+	public String getDec() {
+		return dec;
+	}
+
+	public void setDec(String dec) {
+		this.dec = dec;
+	}
+
+	public String getUpdation_date() {
 		return updation_date;
 	}
 

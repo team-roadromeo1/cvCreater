@@ -149,7 +149,7 @@ response.setHeader("Pragma","no-cache");
 
 String name=(String)session.getAttribute("name");
 String id=(String)session.getAttribute("id");
-if(name==null&&id==null){
+if(name==null||id==null){
 	System.out.print("Attempt of Unauthenticated Access failed.");
 	out.println("<script type=\"text/javascript\">");
 	out.println("alert('You have to login first.');");

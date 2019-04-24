@@ -16,7 +16,7 @@ public class UpdateInfoDao {
 		Transaction t=session.beginTransaction();
 		
 		
-		Query q=session.createQuery("update InfoData data set name=:name,email=:email,phone=:phone,address=:address,ssc=:ssc,ssc_per=:ssc_per,ssc_ins=:ssc_ins,hsc=:hsc,hsc_per=:hsc_per,hsc_ins=:hsc_ins,dgree=:dgree,dgree_per=:dgree_per,dgree_ins=:dgree_ins,dgree_name=:dgree_name,obj=:obj,s1=:s1,s2=:s2,s3=:s3,s4=:s4,s5=:s5,s6=:s6,s7=:s7,s8=:s8,s9=:s9,s10=:s10,p1name=:p1name,p1time=:p1time,p1desc=:p1desc,p2name=:p2name,p2time=:p2time,p2desc=:p2desc,ach1=:ach1,ach2=:ach2,ach3=:ach3,ach4=:ach4,ach5=:ach5,t1name=:t1name,t1_ins=:t1_ins,t1desc=:t1desc,t2name=:t2name,t2_ins=:t2_ins,t2desc=:t2desc,place=:place,decname=:decname,h1=:h1,h2=:h2,h3=:h3,h4=:h4,h5=:h5,updation_date=:updation_date,updation_time=:updation_time where creation_time=:creation_time");
+		Query q=session.createQuery("update InfoData data set name=:name,email=:email,phone=:phone,address=:address,ssc=:ssc,ssc_per=:ssc_per,ssc_ins=:ssc_ins,hsc=:hsc,hsc_per=:hsc_per,hsc_ins=:hsc_ins,dgree=:dgree,dgree_per=:dgree_per,dgree_ins=:dgree_ins,dgree_name=:dgree_name,obj=:obj,s1=:s1,s2=:s2,s3=:s3,s4=:s4,s5=:s5,s6=:s6,s7=:s7,s8=:s8,s9=:s9,s10=:s10,p1name=:p1name,p1time=:p1time,p1desc=:p1desc,p2name=:p2name,p2time=:p2time,p2desc=:p2desc,ach1=:ach1,ach2=:ach2,ach3=:ach3,ach4=:ach4,ach5=:ach5,t1name=:t1name,t1_ins=:t1_ins,t1desc=:t1desc,t2name=:t2name,t2_ins=:t2_ins,t2desc=:t2desc,place=:place,decname=:decname,h1=:h1,h2=:h2,h3=:h3,h4=:h4,h5=:h5,updation_date=:updation_date,updation_time=:updation_time,dec=:dec where creation_time=:creation_time");
 		q.setParameter("name", d.getName());
 		q.setParameter("email", d.getEmail());
 		q.setParameter("phone", d.getPhone());
@@ -66,6 +66,7 @@ public class UpdateInfoDao {
 		q.setParameter("t2desc", d.getT2desc());
 		q.setParameter("place", d.getPlace());
 		q.setParameter("decname", d.getDecname());
+		q.setParameter("dec", d.getDec());
 		q.setParameter("updation_date",d.getUpdation_date());
 		q.setParameter("updation_time",d.getUpdation_time());
 		q.setParameter("creation_time",time);

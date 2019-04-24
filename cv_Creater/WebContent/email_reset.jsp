@@ -8,7 +8,7 @@
 <script src="js/showhide.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Forgot your password? .cv_Creater</title>
+<title>Forgot your email? .cv_Creater</title>
 <style type="text/css">
 
 .email{
@@ -58,7 +58,7 @@ response.setHeader("Pragma","no-cache");
 
 String name=(String)session.getAttribute("name");
 String id=(String)session.getAttribute("id");
-if(name==null&&id==null){
+if(name==null||id==null){
 	System.out.print("Attempt of Unauthenticated Access failed.");
 	out.println("<script type=\"text/javascript\">");
 	out.println("alert('You have to login first.');");

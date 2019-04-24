@@ -701,7 +701,7 @@ public class cvWriter1 {
 						decHead.addCell(decHeadCell);
 						 doc.add(decHead);
 					
-			            String dec_str="I hereby declare that the above-mentioned information is correct up to my knowledge and I bear the responsibility for the correctness of the above-mentioned particulars."; 
+			            String dec_str=writerData.getDec(); 
 						Paragraph dec=new Paragraph(dec_str);
 						dec.setFont(font1);
 						dec.setFontSize(10);
