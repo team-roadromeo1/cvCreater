@@ -137,7 +137,7 @@ public class cvWriter1 {
 		   
 			
 		    Cell c3=new Cell();
-			c3.add("Pecentage/Grade");
+			c3.add("Pecentage");
 			c3.setFont(font);
 			c3.setFontSize(12);
 		    c3.setBackgroundColor(Color.GRAY);
@@ -163,7 +163,7 @@ public class cvWriter1 {
 		   
 			
 		    Cell c7=new Cell();
-			c7.add(writerData.getSsc_per());
+			c7.add(writerData.getSsc_per()+"%");
 			c7.setFont(font1);
 			t.addCell(c7);
 		   
@@ -185,7 +185,7 @@ public class cvWriter1 {
 		   
 			
 		    Cell c11=new Cell();
-			c11.add(writerData.getHsc_per());
+			c11.add(writerData.getHsc_per()+"%");
 			c11.setFont(font1);
 			t.addCell(c11);
 			

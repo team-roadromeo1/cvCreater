@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Quick Cv</title>
   <link href="css/collapsible.css" rel="stylesheet">
+   <link href="img/cv.png" rel="icon">
+
  <style>
  
 .chk{

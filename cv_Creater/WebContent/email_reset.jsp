@@ -4,6 +4,8 @@
 <html>
 <head>
 <link href="css/showhide.css" rel="stylesheet">
+   <link href="img/email.png" rel="icon">
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="js/showhide.js"></script>
 

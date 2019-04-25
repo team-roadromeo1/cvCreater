@@ -30,11 +30,10 @@ public class MsgSender extends HttpServlet {
     data.setMessage(message);
     
     int i=MsgDao.Register(data);
-    int j=MailSender.sendMail("alert.fest@gmail.com","message by name: "+name+" email: "+email, message);
-    
-    if(i>0&&j>0) {
-          	System.out.println("Data Saved at navigated at controller.");
-			pw.println("<script type=\"text/javascript\">");
+    int j=MailSender.sendMail("alert.fest@gmail.com","New Message by "+name,"<h2>"+"Name: "+name+"<br>"+" Email: "+email+"<br>"+"<h3>"+"Message: "+message+"</h3>");
+    int k=MailSender.sendMail(email, "Feedback Recieved","<h2>Thanks for the Feedback "+name+" </h2>"+"<br>"+"<h3>we have successfully recieved your message we'll back to you very soon till then stay tunned with us.</h3>"+"<br>"+"Team cv_Creater");     
+    if(i>0&&j>0&&k>0) {
+          	pw.println("<script type=\"text/javascript\">");
 			pw.println("alert('Message is sent.');");
 			pw.println("location='index.html';");
 			pw.println("</script>");
